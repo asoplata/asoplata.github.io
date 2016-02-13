@@ -1,0 +1,30 @@
+# Dependencies
+markdown:         kramdown
+highlighter:      rouge
+
+# Permalinks
+permalink:        pretty
+# no longer need for jekyll 3.0
+# relative_permalinks: true
+
+# Setup
+title:            Æsop
+tagline:          'Website of Austin Soplata'
+description:      'The personal website of <a href="https://github.com/asoplata" target="_blank">Austin Soplata</a>. Currently employing the <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme <a href="http://hyde.getpoole.com" target="_blank">Hyde</a>.'
+baseurl:          /
+
+author:
+  name:           'Austin Soplata'
+  url:            https://github.com/asoplata
+
+# how do i even?
+gems:             [jekyll-paginate]
+paginate:         5
+
+# Custom vars
+version:          2.1.0
+
+future:           true
+
+github:
+  repo:           https://github.com/asoplata/asoplata.github.io
