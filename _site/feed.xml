@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2016-06-26T18:02:54-04:00</updated><id>/</id><title>Æsop</title><subtitle>Personal website of &lt;a href=&quot;https://github.com/asoplata&quot; target=&quot;_blank&quot;&gt;Austin Soplata&lt;/a&gt;.</subtitle><author><name>Austin Soplata</name></author><entry><title>this is a test blog</title><link href="/2016/01/01/test-post/" rel="alternate" type="text/html" title="this is a test blog" /><published>2016-01-01T00:00:00-05:00</published><updated>2016-01-01T00:00:00-05:00</updated><id>/2016/01/01/test-post</id><content type="html" xml:base="/2016/01/01/test-post/">&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;please ignore&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;lulz
+  sdfa
+  sdafaf
+  asdfa&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ljskdfa;dfs
+asdf&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;le&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;crush&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hello world&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;crushed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content><author><name>Austin Soplata</name></author><category term="web" /><category term="lulz" /><category term="le-lulz" /><category term="le;omg" /><category term="omfg" /><category term="asdf" /><category term="asdf23" /><category term="a341234" /><category term="a52" /><category term="r2344" /><category term="a12" /><category term="a123" /><category term="f123" /><category term="asdf55555" /><category term="asd2222" /><summary>please ignore
+  
+  
+    lulz
+  sdfa
+  sdafaf
+  asdfa
+  
+
+
+ljskdfa;dfs
+asdf
+
+function le-crush-it()
+  print(&quot;hello world&quot;)
+  return(crushed = 2)</summary></entry></feed>

@@ -10,7 +10,7 @@ permalink:        pretty
 # Setup
 title:            Æsop
 tagline:          'Website of Austin Soplata'
-description:      'The personal website of <a href="https://github.com/asoplata" target="_blank">Austin Soplata</a>. Currently employing the <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme <a href="http://hyde.getpoole.com" target="_blank">Hyde</a>.'
+description:      'Personal website of <a href="https://github.com/asoplata" target="_blank">Austin Soplata</a>.'
 baseurl:          /
 
 author:
@@ -18,7 +18,10 @@ author:
   url:            https://github.com/asoplata
 
 # how do i even?
-gems:             [jekyll-paginate]
+# gems:             [jekyll-paginate]
+gems:
+  - jekyll-paginate
+  - jekyll-feed
 paginate:         5
 
 # Custom vars
