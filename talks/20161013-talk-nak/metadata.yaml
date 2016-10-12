@@ -1,0 +1,31 @@
+---
+title: 'Sleep-Stage-Specific Regulation of Cortical Excitation and Inhibition'
+author:
+    - Niels Niethard
+    - Masashi Hasegawa
+    - Takahide Itokazu
+    - Carlos N. Oyanedel
+    - Jan Born
+    - Takashi R. Sato
+tags: []
+abstract: |
+    Sleep is characterized by unique patterns of cortical activity alternating
+    between the stages of slow-wave sleep (SWS) and rapid-eye movement (REM) sleep.
+    How these patterns relate to the balanced activity of excitatory pyramidal
+    cells and inhibitory interneu- rons in cortical circuits is unknown. We
+    investigated cortical network activity during wakefulness, SWS, and REM sleep
+    globally and locally using in vivo cal- cium imaging in mice. Wide-field
+    imaging revealed a reduction in pyramidal cell activity during SWS compared
+    with wakefulness and, unexpectedly, a further profound reduction in activity
+    during REM sleep. Two-photon imaging on local circuits showed that this
+    suppression of activity during REM sleep was accompanied by activation of
+    parvalbumin (PV)+ interneurons, but not of somatostatin (SOM)+ interneurons.
+    PV+ interneurons most active during wakefulness were also most active during
+    REM sleep. Our results reveal a sleep-stage-specific regu- lation of the
+    cortical excitation/inhibition balance, with PV+ interneurons conveying maximum
+    inhibi- tion during REM sleep, which might help shape memories in these
+    networks.
+
+header-includes:
+---
+<!-- currently the default LaTeX template doesn't support stuff like authors' affiliation, EVEN THOUGH it's shown in the default example! grr -->
