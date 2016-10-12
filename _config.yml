@@ -11,7 +11,8 @@ permalink:        pretty
 title:            Æsop
 tagline:          'Austin E Soplata'
 description:      'Personal website of <a href="https://github.com/asoplata" target="_blank">Austin Soplata</a>.'
-baseurl:          /
+# Was just "/" before 20161012, but redirects to home/main page weren't working
+baseurl:
 
 author:
   name:           'Austin Soplata'
