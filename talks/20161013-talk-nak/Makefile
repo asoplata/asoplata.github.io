@@ -12,9 +12,11 @@ define create_presentation
 		$1.md \
 		--to=revealjs \
 		--slide-level=2 \
+		--filter pandoc-crossref \
+		--bibliography=bibliography.bib \
 		--variable revealjs-url=${HOME}/.pandoc/reveal.js \
 		--variable theme=white \
-  		--self-contained \
-  		--output=$1.html
+		--self-contained \
+		--output=$1.html
 
 endef
