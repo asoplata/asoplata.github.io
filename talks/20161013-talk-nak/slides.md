@@ -8,7 +8,8 @@
 
 ### Sleep
 
-![[@brown_general_2010] Fig 1C](figures/brown-2010-fig1c.png){ width=60% }
+![[@brown_general_2010] Fig 1A and C](figures/brown-2010-fig1a-c.png){ width=60%
+}
 
 ## 
 
