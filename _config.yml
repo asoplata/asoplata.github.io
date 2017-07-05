@@ -32,5 +32,3 @@ future:           true
 
 github:
   repo:           https://github.com/asoplata/asoplata.github.io
-
-theme: jekyll-theme-minimal
