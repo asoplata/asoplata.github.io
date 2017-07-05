@@ -1,0 +1,8 @@
+- Note: if on office, switch to /bin/bash to ruby
+- update regularly with `gem update` (especially the github-pages gem) then `bundle update`
+- serve locally on 4000 with `bundle exec jekyll serve`
+- very helpful! http://joshualande.com/jekyll-github-pages-poole/ and https://ncmiller.github.io/2014/08/24/creating-jekyll-blog/ really just searching for jekyll website howtos is awesome
+
+- Jekyll or Poole? -specific things
+  - appears you can program hrefs, or anything, that are defined in '_config.yml' e.g. via `<link href="{{ site.url }}/"/>` or just put {{ site.title }} straight in html
+- see http://downtothewire.io/2015/08/15/configuring-jekyll-for-user-and-project-github-pages/ for best practices

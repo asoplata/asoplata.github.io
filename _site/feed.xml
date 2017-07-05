@@ -1,45 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-<generator uri="http://jekyllrb.com" version="2.4.0">Jekyll</generator>
-<link href="/feed.xml" rel="self" type="application/atom+xml" />
-<link href="/" rel="alternate" type="text/html" />
-<updated>2016-11-11T23:41:46-05:00</updated>
-<id>/</id>
-<subtitle>Personal website of &lt;a href=&quot;https://github.com/asoplata&quot; target=&quot;_blank&quot;&gt;Austin Soplata&lt;/a&gt;.</subtitle>
-<author>
-<name>Austin Soplata</name>
-</author>
-<entry>
-<title>Posters online now!</title>
-<link href="/2016/11/11/posters/" rel="alternate" type="text/html" title="Posters online now!" />
-<published>2016-11-11T00:00:00-05:00</published>
-<updated>2016-11-11T00:00:00-05:00</updated>
-<id>/2016/11/11/posters</id>
-<content type="html" xml:base="/2016/11/11/posters/">&lt;p&gt;I’ve started putting posters on the website! &lt;a href=&quot;/posters&quot;&gt;Go here to access the Posters
-page.&lt;/a&gt;&lt;/p&gt;
-</content>
-<category term="posters" />
-<summary>I’ve started putting posters on the website! Go here to access the Posterspage.</summary>
-</entry>
-<entry>
-<title>Talks online now!</title>
-<link href="/2016/10/12/talks/" rel="alternate" type="text/html" title="Talks online now!" />
-<published>2016-10-12T00:00:00-04:00</published>
-<updated>2016-10-12T00:00:00-04:00</updated>
-<id>/2016/10/12/talks</id>
-<content type="html" xml:base="/2016/10/12/talks/">&lt;p&gt;I’ve started putting talks/presentations on the website! &lt;a href=&quot;/talks&quot;&gt;Go here to access the
-Talks page.&lt;/a&gt;&lt;/p&gt;
-</content>
-<category term="talks" />
-<summary>I’ve started putting talks/presentations on the website! Go here to access theTalks page.</summary>
-</entry>
-<entry>
-<title>this is a test blog post</title>
-<link href="/2016/01/01/test-post/" rel="alternate" type="text/html" title="this is a test blog post" />
-<published>2016-01-01T00:00:00-05:00</published>
-<updated>2016-01-01T00:00:00-05:00</updated>
-<id>/2016/01/01/test-post</id>
-<content type="html" xml:base="/2016/01/01/test-post/">&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-07-05T01:13:58-04:00</updated><id>http://localhost:4000/</id><title type="html">Æsop</title><subtitle>Personal website of &lt;a href=&quot;https://github.com/asoplata&quot; target=&quot;_blank&quot;&gt;Austin Soplata&lt;/a&gt;.</subtitle><author><name>Austin Soplata</name></author><entry><title type="html">Publications available</title><link href="http://localhost:4000/2017/07/05/publications/" rel="alternate" type="text/html" title="Publications available" /><published>2017-07-05T00:00:00-04:00</published><updated>2017-07-05T00:00:00-04:00</updated><id>http://localhost:4000/2017/07/05/publications</id><content type="html" xml:base="http://localhost:4000/2017/07/05/publications/">&lt;p&gt;All publications including posters, talks, and papers are now available on a
+single &lt;a href=&quot;/publications&quot;&gt;Publications page&lt;/a&gt;.&lt;/p&gt;</content><author><name>Austin Soplata</name></author><category term="publications" /><category term="posters" /><category term="talks" /><category term="papers" /><summary type="html">All publications including posters, talks, and papers are now available on a single Publications page.</summary></entry><entry><title type="html">Posters online now!</title><link href="http://localhost:4000/2016/11/11/posters/" rel="alternate" type="text/html" title="Posters online now!" /><published>2016-11-11T00:00:00-05:00</published><updated>2016-11-11T00:00:00-05:00</updated><id>http://localhost:4000/2016/11/11/posters</id><content type="html" xml:base="http://localhost:4000/2016/11/11/posters/">&lt;p&gt;I’ve started putting posters on the website! &lt;a href=&quot;/publications/posters&quot;&gt;Go here to access the Posters
+[edit 2017-07-05: now Publications] page.&lt;/a&gt;&lt;/p&gt;</content><author><name>Austin Soplata</name></author><category term="posters" /><summary type="html">I’ve started putting posters on the website! Go here to access the Posters [edit 2017-07-05: now Publications] page.</summary></entry><entry><title type="html">Talks online now!</title><link href="http://localhost:4000/2016/10/12/talks/" rel="alternate" type="text/html" title="Talks online now!" /><published>2016-10-12T00:00:00-04:00</published><updated>2016-10-12T00:00:00-04:00</updated><id>http://localhost:4000/2016/10/12/talks</id><content type="html" xml:base="http://localhost:4000/2016/10/12/talks/">&lt;p&gt;I’ve started putting talks/presentations on the website! &lt;a href=&quot;/publications/talks&quot;&gt;Go here to access the
+Talks [edit 2017-07-05: now Publications] page.&lt;/a&gt;&lt;/p&gt;</content><author><name>Austin Soplata</name></author><category term="talks" /><summary type="html">I’ve started putting talks/presentations on the website! Go here to access the Talks [edit 2017-07-05: now Publications] page.</summary></entry><entry><title type="html">this is a test blog post</title><link href="http://localhost:4000/2016/01/01/test-post/" rel="alternate" type="text/html" title="this is a test blog post" /><published>2016-01-01T00:00:00-05:00</published><updated>2016-01-01T00:00:00-05:00</updated><id>http://localhost:4000/2016/01/01/test-post</id><content type="html" xml:base="http://localhost:4000/2016/01/01/test-post/">&lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;please ignore&lt;/p&gt;
   &lt;/li&gt;
@@ -54,27 +16,8 @@ Talks page.&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;ljskdfa;dfs
 asdf&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;python
-function le-crush-it()
-  print(&quot;hello world&quot;)
-  return(crushed = 2)
-&lt;/code&gt;&lt;/p&gt;
-</content>
-<category term="web" />
-<category term="lulz" />
-<category term="le-lulz" />
-<category term="le;omg" />
-<category term="omfg" />
-<category term="asdf" />
-<category term="asdf23" />
-<category term="a341234" />
-<category term="a52" />
-<category term="r2344" />
-<category term="a12" />
-<category term="a123" />
-<category term="f123" />
-<category term="asdf55555" />
-<category term="asd2222" />
-<summary>      please ignore        lulz  sdfa  sdafaf  asdfa  ljskdfa;dfsasdfpythonfunction le-crush-it()  print(&quot;hello world&quot;)  return(crushed = 2)</summary>
-</entry>
-</feed>
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;le&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;crush&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hello world&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;crushed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content><author><name>Austin Soplata</name></author><category term="web" /><category term="lulz" /><category term="le-lulz" /><category term="le;omg" /><category term="omfg" /><category term="asdf" /><category term="asdf23" /><category term="a341234" /><category term="a52" /><category term="r2344" /><category term="a12" /><category term="a123" /><category term="f123" /><category term="asdf55555" /><category term="asd2222" /><summary type="html">please ignore lulz sdfa sdafaf asdfa ljskdfa;dfs asdf function le-crush-it() print(&quot;hello world&quot;) return(crushed = 2)</summary></entry></feed>

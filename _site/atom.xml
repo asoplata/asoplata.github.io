@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Æsop</title>
- <link href="/atom.xml" rel="self"/>
- <link href="/"/>
- <updated>2016-11-11T23:41:46-05:00</updated>
- <id></id>
+ <link href="http://localhost:4000/atom.xml" rel="self"/>
+ <link href="http://localhost:4000/"/>
+ <updated>2017-07-05T01:13:58-04:00</updated>
+ <id>http://localhost:4000</id>
  <author>
    <name>Austin Soplata</name>
    <email></email>
@@ -13,30 +13,40 @@
 
  
  <entry>
+   <title>Publications available</title>
+   <link href="http://localhost:4000/2017/07/05/publications/"/>
+   <updated>2017-07-05T00:00:00-04:00</updated>
+   <id>http://localhost:4000/2017/07/05/publications</id>
+   <content type="html">&lt;p&gt;All publications including posters, talks, and papers are now available on a
+single &lt;a href=&quot;/publications&quot;&gt;Publications page&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Posters online now!</title>
-   <link href="/2016/11/11/posters/"/>
+   <link href="http://localhost:4000/2016/11/11/posters/"/>
    <updated>2016-11-11T00:00:00-05:00</updated>
-   <id>/2016/11/11/posters</id>
-   <content type="html">&lt;p&gt;I’ve started putting posters on the website! &lt;a href=&quot;/posters&quot;&gt;Go here to access the Posters
-page.&lt;/a&gt;&lt;/p&gt;
+   <id>http://localhost:4000/2016/11/11/posters</id>
+   <content type="html">&lt;p&gt;I’ve started putting posters on the website! &lt;a href=&quot;/publications/posters&quot;&gt;Go here to access the Posters
+[edit 2017-07-05: now Publications] page.&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  
  <entry>
    <title>Talks online now!</title>
-   <link href="/2016/10/12/talks/"/>
+   <link href="http://localhost:4000/2016/10/12/talks/"/>
    <updated>2016-10-12T00:00:00-04:00</updated>
-   <id>/2016/10/12/talks</id>
-   <content type="html">&lt;p&gt;I’ve started putting talks/presentations on the website! &lt;a href=&quot;/talks&quot;&gt;Go here to access the
-Talks page.&lt;/a&gt;&lt;/p&gt;
+   <id>http://localhost:4000/2016/10/12/talks</id>
+   <content type="html">&lt;p&gt;I’ve started putting talks/presentations on the website! &lt;a href=&quot;/publications/talks&quot;&gt;Go here to access the
+Talks [edit 2017-07-05: now Publications] page.&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  
  <entry>
    <title>this is a test blog post</title>
-   <link href="/2016/01/01/test-post/"/>
+   <link href="http://localhost:4000/2016/01/01/test-post/"/>
    <updated>2016-01-01T00:00:00-05:00</updated>
-   <id>/2016/01/01/test-post</id>
+   <id>http://localhost:4000/2016/01/01/test-post</id>
    <content type="html">&lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;please ignore&lt;/p&gt;
@@ -52,11 +62,11 @@ Talks page.&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;ljskdfa;dfs
 asdf&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;python
-function le-crush-it()
-  print(&quot;hello world&quot;)
-  return(crushed = 2)
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;le&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;crush&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hello world&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;crushed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 </content>
  </entry>
  
