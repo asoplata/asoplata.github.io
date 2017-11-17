@@ -1,0 +1,7 @@
+---
+title: 'CNSO Git Intro'
+author:
+tags: []
+header-includes:
+---
+<!-- currently the default LaTeX template doesn't support stuff like authors' affiliation, EVEN THOUGH it's shown in the default example! grr -->

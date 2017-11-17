@@ -4,13 +4,22 @@
  <title>Æsop</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2017-07-05T01:50:49-04:00</updated>
+ <updated>2017-11-17T16:48:18-05:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Austin Soplata</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Git intro talk</title>
+   <link href="http://localhost:4000/2017/11/17/git-intro/"/>
+   <updated>2017-11-17T00:00:00-05:00</updated>
+   <id>http://localhost:4000/2017/11/17/git-intro</id>
+   <content type="html">&lt;p&gt;&lt;a href=&quot;/publications/talks/git-intro/slides&quot;&gt;Go here to access the Git Intro Talk&lt;/a&gt;!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Publications available</title>
