@@ -99,7 +99,7 @@ there on the website!
 
 You just used git to version control your work, and you shared it publicly with the rest of the world! Like how science is supposed to be done! You now know 99% of what you need to contribute to the BU-CNSO website, or any other GitHub open source projects!
 
-# BU-CNSO website
+# The "Fork and Pull Request" model
 
 ## Now the real fight begins...
 
@@ -222,4 +222,28 @@ git push origin
 
 # Effective BU-CNSO website contribution
 
-## uhh
+## Install Ruby, RubyGems, and Jekyll
+
+- On Windows, [use this
+  guide](https://davidburela.wordpress.com/2015/11/28/easily-install-jekyll-on-windows-with-3-command-prompt-entries-and-chocolatey/)
+- On Mac, [follow these directions](https://jekyllrb.com/docs/installation/)
+- On Linux, install Ruby from your package manager and follow the same
+  instructions here:
+  [https://jekyllrb.com/docs/installation/](https://jekyllrb.com/docs/installation/)
+
+## Update your "gems"
+
+- In a Terminal, go to the folder of your BU-CNSO fork, and run these commands
+
+```
+gem update
+bundle update
+```
+
+## Build, serve, and run the website!
+
+Finally, run this to build the website as it stands!
+
+```
+bundle exec jekyll serve
+```
