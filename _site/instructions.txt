@@ -1,3 +1,8 @@
+- if starting from scratch, install bundle via `gem install bundler`
+- also, make sure 'ruby-dev' package installed for updating/building
+    - also maybe 'ruby-pkg-config' ?
+    - nokogiri-1.8.1 needs package 'zlib1g-dev'
+
 - Note: if on office, switch to /bin/bash to ruby
 - update regularly with `gem update` (especially the github-pages gem) then `bundle update`
 - serve locally on 4000 with `bundle exec jekyll serve`
