@@ -4,7 +4,7 @@
  <title>Æsop</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2017-11-24T17:28:01-05:00</updated>
+ <updated>2017-12-04T22:10:37-05:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Austin Soplata</name>
@@ -17,7 +17,7 @@
    <link href="http://localhost:4000/2017/11/17/git-intro/"/>
    <updated>2017-11-17T00:00:00-05:00</updated>
    <id>http://localhost:4000/2017/11/17/git-intro</id>
-   <content type="html">&lt;p&gt;&lt;a href=&quot;/publications/talks/git-intro/slides&quot;&gt;Go here to access the Git Intro Talk&lt;/a&gt;!&lt;/p&gt;
+   <content type="html">&lt;p&gt;&lt;a href=&quot;/publications/talks/20171117-git-intro/slides&quot;&gt;Go here to access the Git Intro Talk&lt;/a&gt;!&lt;/p&gt;
 </content>
  </entry>
  
@@ -36,8 +36,7 @@ single &lt;a href=&quot;/publications&quot;&gt;Publications page&lt;/a&gt;.&lt;/
    <link href="http://localhost:4000/2016/11/11/posters/"/>
    <updated>2016-11-11T00:00:00-05:00</updated>
    <id>http://localhost:4000/2016/11/11/posters</id>
-   <content type="html">&lt;p&gt;I’ve started putting posters on the website! &lt;a href=&quot;/publications/posters&quot;&gt;Go here to access the Posters
-[edit 2017-07-05: now Publications] page.&lt;/a&gt;&lt;/p&gt;
+   <content type="html">&lt;p&gt;I’ve started putting posters on the website! &lt;a href=&quot;/publications&quot;&gt;Go here to access the Publications page.&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  
@@ -46,35 +45,8 @@ single &lt;a href=&quot;/publications&quot;&gt;Publications page&lt;/a&gt;.&lt;/
    <link href="http://localhost:4000/2016/10/12/talks/"/>
    <updated>2016-10-12T00:00:00-04:00</updated>
    <id>http://localhost:4000/2016/10/12/talks</id>
-   <content type="html">&lt;p&gt;I’ve started putting talks/presentations on the website! &lt;a href=&quot;/publications/talks&quot;&gt;Go here to access the
-Talks [edit 2017-07-05: now Publications] page.&lt;/a&gt;&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>this is a test blog post</title>
-   <link href="http://localhost:4000/2016/01/01/test-post/"/>
-   <updated>2016-01-01T00:00:00-05:00</updated>
-   <id>http://localhost:4000/2016/01/01/test-post</id>
-   <content type="html">&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;please ignore&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;lulz
-  sdfa
-  sdafaf
-  asdfa&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;ljskdfa;dfs
-asdf&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;le&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;crush&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hello world&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;crushed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+   <content type="html">&lt;p&gt;I’ve started putting talks/presentations on the website! &lt;a href=&quot;/publications&quot;&gt;Go here to access the
+Publications page.&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  
