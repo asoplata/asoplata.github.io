@@ -4,13 +4,26 @@
  <title>Æsop</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2017-12-04T22:10:37-05:00</updated>
+ <updated>2018-03-16T17:38:18-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Austin Soplata</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>First paper is out!</title>
+   <link href="http://localhost:4000/2018/03/16/first-paper-out/"/>
+   <updated>2018-03-16T00:00:00-04:00</updated>
+   <id>http://localhost:4000/2018/03/16/first-paper-out</id>
+   <content type="html">&lt;p&gt;OMG My first paper is out!!! Not that anyone reads this, but still (even though
+it came out months ago)! Since it’s open access, you can download it directly
+from the &lt;a href=&quot;/publications&quot;&gt;Publications page&lt;/a&gt; or &lt;a href=&quot;http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005879&quot;&gt;go to the paper directly on PLoS
+Computational
+Biology&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Git intro talk</title>
