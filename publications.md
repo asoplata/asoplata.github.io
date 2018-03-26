@@ -4,6 +4,14 @@ title: Publications
 description: "List of all publications"
 ---
 
+### Table of Contents:
+
+- [Papers](#papers)
+- [Talks](#talks)
+- [Posters](#posters)
+- [Resources](#resources)
+- [Software](#software)
+
 ### Papers
 
 ##### 2018
@@ -12,7 +20,7 @@ description: "List of all publications"
   Thalamocortical control of propofol phase-amplitude coupling. PLOS
   Computational Biology. 2017;13: e1005879.
   doi:10.1371/journal.pcbi.1005879](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005879)
-    - [PDF download
+    - [Local PDF download
       here](/publications/papers/Soplata-2017-thalamocortical-control.pdf)
     - The reproducible code for this paper is available both [here as a
       standalone
@@ -20,7 +28,7 @@ description: "List of all publications"
       [here in "plugin" form](https://github.com/asoplata/propofol-coupling-2017-mechanisms) for use with [DynaSim, available here](https://github.com/dynasim/dynasim/).
 - [Sherfey JS, Soplata AE, Ardid S, Roberts EA, Stanley DA, Pittman-Polletta BR, et al. DynaSim: A MATLAB Toolbox for Neural Modeling and Simulation. Front Neuroinform. 2018;12. doi:10.3389/fninf.2018.00010
 ](https://www.frontiersin.org/articles/10.3389/fninf.2018.00010/full)
-    - [PDF download here](/publications/papers/Sherfey-2018-DynaSim.pdf)
+    - [Local PDF download here](/publications/papers/Sherfey-2018-DynaSim.pdf)
     - The reproducible code for this paper's DynaSim and Brian2 benchmarks
       is available [here in this
       repo](https://github.com/asoplata/dynasim-benchmark-brette-2007).
@@ -43,7 +51,7 @@ here.](https://github.com/asoplata/asoplata.github.io/tree/master/publications/t
 >   Inhibition. Current Biology.
 >   [https://doi.org/10.1016/j.cub.2016.08.035](https://doi.org/10.1016/j.cub.2016.08.035)
 
-### Posters:
+### Posters
 
 To see the actual source code for this poster, [go to the GitHub repo
 here.](https://github.com/asoplata/asoplata.github.io/tree/master/publications/posters)
@@ -53,7 +61,17 @@ here.](https://github.com/asoplata/asoplata.github.io/tree/master/publications/p
   Abstracts. San Diego, CA: Society for Neuroscience, 2016.
   Online.](/publications/posters/2016-sfn/ASoplata-SFN2016-poster.pdf)
 
-### Software:
+### Resources
+
+- I maintain public lists of:
+    - [Open Science 
+      Resources](https://github.com/asoplata/open-science-resources)
+    - [Open Computational Neuroscience 
+      Resources](https://github.com/asoplata/open-computational-neuroscience-resources)
+    - [Random helpful lists, mostly of resources for learning 
+      programming](https://github.com/asoplata/helpful-resources)
+
+### Software
 
 - I try to make all the code/data for my publications as reproducible as
   possible. For code specific to each paper, see above.
@@ -66,7 +84,6 @@ here.](https://github.com/asoplata/asoplata.github.io/tree/master/publications/p
   Stanley](https://github.com/davestanley), [Dr. Salva
   Ardid](https://github.com/kupiqu), and [Dr. Ben
   Polletta](https://github.com/benpolletta).
-
 - [Here is a working DynaSim
   implementation](https://github.com/asoplata/dynasim-krishnan-2016-model) for
   the thalamocortical model of the following paper:
@@ -89,3 +106,6 @@ here.](https://github.com/asoplata/asoplata.github.io/tree/master/publications/p
   very preliminary, possibly out of date program to convert Evernote XML files
   into Markdown files. In the future I'll probably make something like this
   for Evernote -> Emacs' Org mode.
+- [A collection of simple bash scripts](https://github.com/asoplata/bin) I find 
+  to be particularly helpful when searching across code and 
+  interacting/synchronizing files between my local computer and a cluster.

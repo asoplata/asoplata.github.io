@@ -4,13 +4,29 @@
  <title>Æsop</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-03-16T17:38:18-04:00</updated>
+ <updated>2018-03-26T18:37:51-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Austin Soplata</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Open Science Resource Lists Available</title>
+   <link href="http://localhost:4000/2018/03/26/open-science-resources/"/>
+   <updated>2018-03-26T00:00:00-04:00</updated>
+   <id>http://localhost:4000/2018/03/26/open-science-resources</id>
+   <content type="html">&lt;p&gt;I’ve finally, after years of accumulating notes (in org-mode, natch), published 
+the first edition of everything I can find on &lt;a href=&quot;https://github.com/asoplata/open-science-resources&quot;&gt;Open 
+Science&lt;/a&gt; and &lt;a href=&quot;https://github.com/asoplata/open-computational-neuroscience-resources&quot;&gt;Open 
+Computational 
+Neuroscience&lt;/a&gt;! 
+They seem like such tiny little things, but they represent small, meaningful 
+victories to me for getting off my bum and finally starting something I’ve been 
+planning to start for a VERY long time.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>First paper is out!</title>
