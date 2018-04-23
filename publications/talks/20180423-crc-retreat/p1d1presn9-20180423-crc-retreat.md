@@ -30,13 +30,13 @@ width=100% }
 
 ## Propofol Mechanisms of Action
 
-1. **Increases $GABA_A$ inhibition:**
-    - Increases max synaptic conductance (**$\uparrow \bar g_{GABA_A}$**)
-    - Increases decay time constant (**$\uparrow \tau_{GABA_A}$**)
+1. **Increases** $\small GABA_A$ **inhibition**:
+    - Increases max synaptic conductance (**$\small \uparrow \bar g_{GABA_A}$**  )
+    - Increases decay time constant (**$\small \uparrow \tau_{GABA_A}$**  )
 
-2. **Decreases thalamocortical (TC) cell H-current conductance ($\downarrow \bar g_H$)**:
+2. **Decreases thalamocortical (TC) cell H-current conductance ($\small \downarrow \bar g_H$  )**
 
-3. **Decreases Excitation from brainstem ($\downarrow I_{applied}$):**
+3. **Decreases Excitation from brainstem** ($\small \downarrow I_{applied}$)
 
 ## Our Model Thalamus
 
@@ -50,7 +50,7 @@ Overview
 
 ## Overview
 
-1. **Increase of $GABA_A$ and decrease of TC cell H-current are required for 
+1. **Increase of $\small GABA_A$ and decrease of TC cell H-current are required for 
    thalamic Alpha oscillations**
 
 2. Thalamic Alpha oscillations are sustained spindles
@@ -61,7 +61,7 @@ Overview
 
 
 
-$GABA_A$ and H-current changes are required for thalamic Alpha oscillations
+$\small GABA_A  $   and H-current changes are required for thalamic Alpha oscillations
 ==============================================================================
 
 ## Native hyperpolarized thalamus cannot produce Alpha oscillations
@@ -69,7 +69,7 @@ $GABA_A$ and H-current changes are required for thalamic Alpha oscillations
 ![From Fig 3 of 
 @soplata_thalamocortical_2017](figures/fig04-baseline-space.png){ width=75% }
 
-## Simulating $GABA_A$ increase enables thalamic Alpha oscillations
+## Simulating $\small GABA_A  $   increase enables thalamic Alpha oscillations
 
 ![From Fig 2 of 
 @soplata_thalamocortical_2017](figures/fig05-initial-alpha.png){ width=55% }
@@ -83,7 +83,7 @@ width=65% }
 
 - Sustained Alpha does *not* occur normally
 
-- **$GABA_A$ increase** is a necessary factor for sustained Alpha
+- **$\small GABA_A$ increase** is a necessary factor for sustained Alpha
 
 - **TC cell H-current decrease** is also a necessary factor for sustained Alpha
 
@@ -91,7 +91,7 @@ width=65% }
 
 ## Overview So Far
 
-1. Increase of $GABA_A$ and decrease of TC cell H-current are required for 
+1. Increase of $\small GABA_A$ and decrease of TC cell H-current are required for 
 thalamic Alpha oscillations
 
 2. **Thalamic Alpha oscillations are sustained spindles**
@@ -119,7 +119,7 @@ Thalamic Alpha oscillations are sustained spindles
 
 ## Overview So Far
 
-1. Increase of $GABA_A$ and decrease of TC cell H-current are required for 
+1. Increase of $\small GABA_A$ and decrease of TC cell H-current are required for 
 thalamic Alpha oscillations
 
 2. Thalamic Alpha oscillations are sustained spindles
@@ -190,7 +190,7 @@ Conclusions
 
 ## Conclusions 1
 
-1. Propofol sustained alpha may come from its **$GABA_A$ increase** and 
+1. Propofol sustained alpha may come from its **$\small GABA_A$ increase** and 
   **H-current decrease** in the thalamus.
 
 2. This propofol alpha is dependent on the **spindling dynamics** of the 
@@ -251,5 +251,20 @@ Appendix
 
 References
 ==============================================================================
+
+## CSS
+
+<style>
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  text-transform: none;
+}
+
+.reveal section img { background:none; border:none; box-shadow:none; }
+</style>
 
 ## 

@@ -1,3 +1,19 @@
+# --css=${HOME}/.pandoc/templates/custom.css \
+# 		--variable revealjs-url=${HOME}/.pandoc/revealjs \
+# 		--variable revealjs-url=http://lab.hakim.se/reveal-js/js/reveal.js \
+# --mathjax=http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML \
+# --self-contained \
+
+html_bib:
+	pandoc *.md \
+		--from=markdown --to=revealjs \
+		--slide-level=2 --self-contained \
+		--mathjax \
+		--variable revealjs-url=${HOME}/.pandoc/revealjs \
+		--variable theme=white \
+		--filter=pandoc-citeproc --bibliography=bibliography.bib \
+		--output=html_bib_slides.html
+
 beamer:
 	pandoc *.md \
 		--slide-level=2 --toc \
@@ -21,16 +37,6 @@ html:
 		--variable revealjs-url=${HOME}/.pandoc/revealjs \
 		--variable theme=white \
 		--output=html_slides.html
-
-html_bib:
-	pandoc *.md \
-		--from=markdown --to=revealjs \
-		--slide-level=2 --self-contained --mathml \
-		--css=${HOME}/.pandoc/templates/custom.css \
-		--variable revealjs-url=${HOME}/.pandoc/revealjs \
-		--variable theme=white \
-		--filter=pandoc-citeproc --bibliography=bibliography.bib \
-		--output=html_bib_slides.html
 
 manuscript:
 	pandoc *.md \
