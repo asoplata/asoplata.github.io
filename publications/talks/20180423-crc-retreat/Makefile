@@ -8,7 +8,7 @@ html_bib:
 	pandoc *.md \
 		--from=markdown --to=revealjs \
 		--slide-level=2 --self-contained \
-		--mathjax \
+		--mathml \
 		--variable revealjs-url=${HOME}/.pandoc/revealjs \
 		--variable theme=white \
 		--filter=pandoc-citeproc --bibliography=bibliography.bib \
