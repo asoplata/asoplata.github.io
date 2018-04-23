@@ -4,13 +4,24 @@
  <title>Æsop</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-04-05T15:24:57-04:00</updated>
+ <updated>2018-04-22T23:03:06-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Austin Soplata</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>CRC Talk Available</title>
+   <link href="http://localhost:4000/2018/04/22/talk-available/"/>
+   <updated>2018-04-22T00:00:00-04:00</updated>
+   <id>http://localhost:4000/2018/04/22/talk-available</id>
+   <content type="html">&lt;p&gt;To see the “Thalamic Control of Propofol Phase-amplitude Coupling” talk given 
+at the Cognitive Rhythms Collaborative Retreat on April 23rd, 2018, &lt;a href=&quot;/publications/talks/20180423-crc-retreat/slides.html&quot;&gt;click here 
+to go to the talk!&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Open Science Resource Lists Available</title>

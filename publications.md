@@ -38,6 +38,10 @@ description: "List of all publications"
 To see the actual source code for these talks, [go to the GitHub repo
 here.](https://github.com/asoplata/asoplata.github.io/tree/master/publications/talks/)
 
+- [2018-04-23 Monday, "Thalamic Control of Propofol Phase-amplitude Coupling" 
+  Cognitive Rhythms Collaborative Retreat, MIT,
+  ](/publications/talks/20180423-crc-retreat/slides.html)
+
 - [2017-11-17 Friday, Git Introduction for BU CNSO, Boston University,
   ](/publications/talks/20171117-git-intro/slides.html) going over both the basics of
   Git and how to contribute to the [BU-CNSO website repo on

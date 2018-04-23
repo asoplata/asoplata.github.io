@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+       &middot; Æsop
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Æsop" /> <!-- from github atom help -->
+
+  <!-- Google Plus -->
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Personal website of <a href="https://github.com/asoplata" target="_blank">Austin Soplata</a>.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about/">About</a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/publications/">Publications</a>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/publications/talks/20161013-nak-talk/slides/">Sleep-Stage-Specific Regulation of Cortical Excitation and Inhibition</a>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/publications/talks/20171117-git-intro/slides/">Let’s talk about Git!</a>
+        
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/tags/">Tags</a>
+        
+      
+    
+
+    <a class="sidebar-nav-item" href="https://twitter.com/austinsoplata/">Twitter: @austinsoplata</a>
+	<a class="sidebar-nav-item" href="https://github.com/asoplata/">GitHub: asoplata</a>
+
+      <!-- 
+      <a class="sidebar-nav-item" href="https://github.com/asoplata/asoplata.github.io/archive/v2.1.0.zip">Download</a>
+      <a class="sidebar-nav-item" href="https://github.com/asoplata/asoplata.github.io">GitHub project</a>
+      <span class="sidebar-nav-item">Currently v2.1.0</span>
+      -->
+
+    </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy Austin Soplata, 2018. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Æsop</a>
+            <small>Austin E Soplata</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="page">
+  <h1 class="page-title"></h1>
+  <p>% Thalamic Control of Propofol Phase-amplitude Coupling
+% Austin Soplata, Boston University
+% Access this presentation live at: <a href="http://asoplata.com">asoplata.com</a></p>
+
+<h1 id="background--methods">Background / Methods</h1>
+
+<h2 id="propofol-alpha-and-slow-wave">Propofol Alpha and Slow Wave</h2>
+
+<p><img src="/publications/talks/20180423-crc-retreat/figures/fig01-propofol-basic-phenom.png" alt="From Fig 1 of 
+@mukamel_transition_2014" />{ width=100% 
+}</p>
+
+<h2 id="why-do-we-care">Why do we care?</h2>
+
+<ul>
+  <li>
+    <p>Better understanding of propofol mechanisms could lead to more targeted 
+anesthetics</p>
+  </li>
+  <li>
+    <p>Clarify mechanistic differences between between anesthesia and sleep, 
+including rhythms</p>
+  </li>
+  <li>
+    <p>Propofol coupling correlates with depth of anesthesia, as can be used in the 
+Operating Room</p>
+    <ul>
+      <li>Coupling mechanisms may tie to specific aspects of loss of consciousness</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="sleep-spindles-vs-propofol-alpha">Sleep Spindles vs Propofol Alpha</h2>
+
+<p><img src="/publications/talks/20180423-crc-retreat/figures/fig02-spindles.png" alt="From Fig 1 of @astori_manipulating_2013" />{ 
+width=100% }</p>
+
+<h2 id="propofol-mechanisms-of-action">Propofol Mechanisms of Action</h2>
+
+<ol>
+  <li><strong>Increases $GABA_A$ inhibition:</strong>
+    <ul>
+      <li>Increases max synaptic conductance (<strong>$\uparrow \bar g_{GABA_A}$</strong>)</li>
+      <li>Increases decay time constant (<strong>$\uparrow \tau_{GABA_A}$</strong>)</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Decreases thalamocortical (TC) cell H-current conductance ($\downarrow \bar g_H$)</strong>:</p>
+  </li>
+  <li><strong>Decreases Excitation from brainstem ($\downarrow I_{applied}$):</strong></li>
+</ol>
+
+<h2 id="our-model-thalamus">Our Model Thalamus</h2>
+
+<p><img src="/publications/talks/20180423-crc-retreat/figures/fig03-thalamic-model.png" alt="From Fig 2 of 
+@soplata_thalamocortical_2017" />{ width=80% }</p>
+
+<h1 id="overview">Overview</h1>
+
+<h2 id="overview-1">Overview</h2>
+
+<ol>
+  <li>
+    <p><strong>Increase of $GABA_A$ and decrease of TC cell H-current are required for 
+thalamic Alpha oscillations</strong></p>
+  </li>
+  <li>
+    <p>Thalamic Alpha oscillations are sustained spindles</p>
+  </li>
+  <li>
+    <p>Interaction between thalamic Alpha and Slow Wave Activity can produce 
+propofol phase-amplitude coupling regimes</p>
+  </li>
+</ol>
+
+<h1 id="gaba_a-and-h-current-changes-are-required-for-thalamic-alpha-oscillations">$GABA_A$ and H-current changes are required for thalamic Alpha oscillations</h1>
+
+<h2 id="native-hyperpolarized-thalamus-cannot-produce-alpha-oscillations">Native hyperpolarized thalamus cannot produce Alpha oscillations</h2>
+
+<p><img src="/publications/talks/20180423-crc-retreat/figures/fig04-baseline-space.png" alt="From Fig 3 of 
+@soplata_thalamocortical_2017" />{ width=75% }</p>
+
+<h2 id="simulating-gaba_a-increase-enables-thalamic-alpha-oscillations">Simulating $GABA_A$ increase enables thalamic Alpha oscillations</h2>
+
+<p><img src="/publications/talks/20180423-crc-retreat/figures/fig05-initial-alpha.png" alt="From Fig 2 of 
+@soplata_thalamocortical_2017" />{ width=55% }</p>
+
+<h2 id="alpha-requires-h-current-decrease">Alpha requires H-current decrease</h2>
+
+<p><img src="/publications/talks/20180423-crc-retreat/figures/fig06-ncf-planes.png" alt="From Fig 4 of @soplata_thalamocortical_2017" />{ 
+width=65% }</p>
+
+<h2 id="summary-so-far">Summary So Far</h2>
+
+<ul>
+  <li>
+    <p>Sustained Alpha does <em>not</em> occur normally</p>
+  </li>
+  <li>
+    <p><strong>$GABA_A$ increase</strong> is a necessary factor for sustained Alpha</p>
+  </li>
+  <li>
+    <p><strong>TC cell H-current decrease</strong> is also a necessary factor for sustained Alpha</p>
+  </li>
+</ul>
+
+<h2 id="overview-so-far">Overview So Far</h2>
+
+<ol>
+  <li>
+    <p>Increase of $GABA_A$ and decrease of TC cell H-current are required for 
+thalamic Alpha oscillations</p>
+  </li>
+  <li>
+    <p><strong>Thalamic Alpha oscillations are sustained spindles</strong></p>
+  </li>
+  <li>
+    <p>Interaction between thalamic Alpha and Slow Wave Activity can produce 
+propofol phase-amplitude coupling regimes</p>
+  </li>
+</ol>
+
+<h1 id="thalamic-alpha-oscillations-are-sustained-spindles">Thalamic Alpha oscillations are sustained spindles</h1>
+
+<h2 id="sustained-alpha-emerges-from-baseline-spindles">Sustained alpha emerges from Baseline spindles</h2>
+
+<p><img src="/publications/talks/20180423-crc-retreat/figures/fig07-from-spindles.png" alt="From Fig 5 of 
+@soplata_thalamocortical_2017" />{ width=90% }</p>
+
+<h2 id="summary-so-far-1">Summary So Far</h2>
+
+<ul>
+  <li>
+    <p>Propofol thalamic alpha takes advantage of thalamic spindle dynamics (e.g. 
+$T_{window}$)</p>
+  </li>
+  <li>
+    <p>Enhanced <em>inhibition</em> enables <em>more</em> spiking/oscillating due to T-current and 
+H-current interplay</p>
+  </li>
+</ul>
+
+<h2 id="overview-so-far-1">Overview So Far</h2>
+
+<ol>
+  <li>
+    <p>Increase of $GABA_A$ and decrease of TC cell H-current are required for 
+thalamic Alpha oscillations</p>
+  </li>
+  <li>
+    <p>Thalamic Alpha oscillations are sustained spindles</p>
+  </li>
+  <li>
+    <p><strong>Interaction between thalamic Alpha and Slow Wave Activity can produce 
+propofol phase-amplitude coupling regimes</strong></p>
+  </li>
+</ol>
+
+<h1 id="alpha-swo-coupling">Alpha-SWO Coupling</h1>
+
+<h2 id="slow-wave-oscillations">Slow Wave Oscillations</h2>
+
+<p><img src="/publications/talks/20180423-crc-retreat/figures/fig08-swo-overview.png" alt="From Fig 1 of @crunelli_slow_2010" />{ 
+width=100% }</p>
+
+<h2 id="phase-amplitude-coupling-switches">Phase-amplitude Coupling Switches</h2>
+
+<p><img src="/publications/talks/20180423-crc-retreat/figures/fig09-coupling-phenom.png" alt="From Fig 1 of 
+@mukamel_transition_2014" />{ width=70% 
+}</p>
+
+<h2 id="our-full-model-network">Our Full Model Network</h2>
+
+<p><img src="/publications/talks/20180423-crc-retreat/figures/fig10-full-model.png" alt="From Fig 9 of @soplata_thalamocortical_2017" />{ 
+width=60% }</p>
+
+<h2 id="simulating-up-vs-down-states">Simulating UP vs DOWN states</h2>
+
+<p><img src="/publications/talks/20180423-crc-retreat/figures/fig11-cf-ncf-part1.png" alt="From Fig 7 of @soplata_thalamocortical_2017" />{ 
+width=70% }</p>
+
+<h2 id="simulating-up-vs-down-states-1">Simulating UP vs DOWN states</h2>
+
+<p><img src="/publications/talks/20180423-crc-retreat/figures/fig12-cf-ncf-part2.png" alt="From Fig 7 of @soplata_thalamocortical_2017" />{ 
+width=70% }</p>
+
+<h2 id="trough-max-thalamic-alpha">Trough-max thalamic alpha</h2>
+
+<p><img src="/publications/talks/20180423-crc-retreat/figures/fig13-cf-ncf-part3.png" alt="From Fig 7 of @soplata_thalamocortical_2017" />{ 
+width=70% }</p>
+
+<h2 id="trough-max-comparison">Trough-max comparison</h2>
+<p><img src="/publications/talks/20180423-crc-retreat/figures/fig14-tmax-comparison.png" alt="From Fig1 and 7 of @soplata_thalamocortical_2017" />{ 
+width=70% }</p>
+
+<h2 id="peak-max-thalamic-alpha">Peak-max thalamic alpha</h2>
+
+<p><img src="/publications/talks/20180423-crc-retreat/figures/fig15-pmax.png" alt="From Fig1 and 7 of @soplata_thalamocortical_2017" />{ width=70% }</p>
+
+<h2 id="peak-max-comparison">Peak-max comparison</h2>
+
+<p><img src="/publications/talks/20180423-crc-retreat/figures/fig16-pmax-comparison.png" alt="From Fig1 and 7 of @soplata_thalamocortical_2017" />{ 
+width=70% }</p>
+
+<h2 id="coupling-summary-so-far">Coupling Summary So Far</h2>
+
+<ul>
+  <li>
+    <p>Given SWO UP/DOWN transitions coming from cortex to thalamus,</p>
+
+    <ol>
+      <li>
+        <p><strong>“trough-max” Alpha can be generated during DOWNs by the thalamus</strong></p>
+      </li>
+      <li>
+        <p><strong>“peak-max” Alpha can be generated during UPs by the thalamus</strong></p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p><strong>Overall thalamic hyperpolarization</strong> is the critical factor for switching
+the thalamus between trough-max and peak-max</p>
+  </li>
+</ul>
+
+<h1 id="conclusions">Conclusions</h1>
+
+<h2 id="conclusions-1">Conclusions 1</h2>
+
+<ol>
+  <li>
+    <p>Propofol sustained alpha may come from its <strong>$GABA_A$ increase</strong> and 
+  <strong>H-current decrease</strong> in the thalamus.</p>
+  </li>
+  <li>
+    <p>This propofol alpha is dependent on the <strong>spindling dynamics</strong> of the 
+thalamus.</p>
+  </li>
+</ol>
+
+<h2 id="conclusions-2">Conclusions 2</h2>
+
+<ol>
+  <li>
+    <p>During <strong>“trough-max”</strong> propofol coupling, the thalamus may cause 
+the sustained Alpha in the DOWN/trough phase. Similarly, in <strong>“peak-max”</strong>
+coupling, the thalamus may cause the sustained Alpha seen during 
+the UP/peak phase.</p>
+  </li>
+  <li>
+    <p><strong>Increased hyperpolarization</strong> of the thalamus is sufficient to switch 
+from trough-max thalamic firing to peak-max thalamic firing, and vice versa.</p>
+  </li>
+</ol>
+
+<h2 id="implications">Implications</h2>
+
+<ul>
+  <li>
+    <p>Propofol alpha may arise from the thalamus.</p>
+  </li>
+  <li>
+    <p>Hyperpolarization level of the thalamus may determine which coupling regime 
+is present (trough-max or peak-max), and may be controlled by specific 
+brainstem nuclei.</p>
+  </li>
+  <li>
+    <p>Since propofol alpha is not present during trough-max UP states, there may 
+still be corticothalamic <em>communication</em> during trough-max.</p>
+  </li>
+</ul>
+
+<h2 id="acknowledgements">Acknowledgements</h2>
+
+<ul>
+  <li>Kopell Lab @ BU: Nancy Kopell, Michelle McCarthy, Jason Sherfey, Erik 
+Roberts, alums Shane Lee, ShiNung Ching, Sujith Vijayan</li>
+  <li>CRC community</li>
+  <li>BU Graduate Program for Neuroscience, especially Shelley Russek and Sandi 
+Grasso</li>
+  <li>Anesthesia research @ MIT: Emery Brown lab, Patrick Purdon lab, Christa van 
+Dort lab, Ken Solt lab</li>
+  <li>NIH, NSF, and HHS for funding including training</li>
+</ul>
+
+<h2 id="simulation-code">Simulation Code</h2>
+
+<p>Our lab uses and develops the <a href="https://www.github.com/dynasim/dynasim">DynaSim 
+Simulator</a> originally created by Jason 
+Sherfey. All the code necessary to run these simulations <a href="https://github.com/asoplata/propofol-coupling-2017-mechanisms">is available on 
+GitHub here</a>!</p>
+
+<p><img src="figures/fig17-dynasim-paper.png" alt="" />{ width=100% }</p>
+
+<h1 id="appendix">Appendix</h1>
+
+<h2 id="detail-t_window-is-critical">Detail: $T_{window}$ is critical</h2>
+
+<p><img src="figures/fig18-t-window.png" alt="" />{ width=85% }</p>
+
+<h2 id="detail-propofol-alpha-mechanism">Detail: Propofol Alpha mechanism</h2>
+
+<p><img src="figures/fig19-full-propofol-mechanism.png" alt="" />{ width=75% }</p>
+
+<h1 id="references">References</h1>
+
+<p>##</p>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>
