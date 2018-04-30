@@ -1,4 +1,10 @@
-## Sleep-Stage-Specific Regulation of Cortical Excitation and Inhibition
+---
+title: |
+    Sleep-Stage-Specific Regulation of Cortical Excitation and Inhibition
+layout: null
+
+---
+
 
 [@niethard_sleep-stage-specific_2016]
 

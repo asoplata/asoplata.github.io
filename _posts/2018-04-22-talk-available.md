@@ -2,6 +2,7 @@
 layout: post
 title: CRC Talk Available
 tags: [talks]
+
 ---
 
 To see the "Thalamic Control of Propofol Phase-amplitude Coupling" talk given 

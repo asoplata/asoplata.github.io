@@ -1,4 +1,11 @@
-# Let's talk about Git!
+---
+title: |
+    Let's talk about Git!
+author: |
+    Austin Soplata, Boston University
+layout: null
+
+---
 
 ## Intro Slides
 

@@ -2,6 +2,7 @@
 layout: post
 title: Open Science Resource Lists Available
 tags: [open-science]
+
 ---
 
 I've finally, after years of accumulating notes (in org-mode, natch), published 

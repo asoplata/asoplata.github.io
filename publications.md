@@ -2,6 +2,7 @@
 layout: page
 title: Publications
 description: "List of all publications"
+
 ---
 
 ### Table of Contents:

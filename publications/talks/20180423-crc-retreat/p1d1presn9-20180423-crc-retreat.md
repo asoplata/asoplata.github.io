@@ -1,6 +1,14 @@
-% Thalamic Control of Propofol Phase-amplitude Coupling
-% Austin Soplata, Boston University
-% Access this presentation live at: [asoplata.com/talk](http://asoplata.com/talk)
+---
+title: |
+    Thalamic Control of Propofol Phase-amplitude Coupling
+author: |
+    Austin Soplata, Boston University
+
+    Access this presentation live at: [asoplata.com/talk](http://asoplata.com/talk)
+
+layout: null
+
+---
 
 Background / Methods
 ==============================================================================
