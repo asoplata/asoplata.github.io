@@ -89,7 +89,7 @@ revealjs-local:
 			--variable theme=white \
 			--standalone --mathjax \
 			--filter=pandoc-citeproc --bibliography=bibliography.bib \
-			--output=output-revealjs-$(shell date +%Y%m%d).html; \
+			--output=output-revealjs-local-$(shell date +%Y%m%d).html; \
 	else \
 		pandoc markdown-test.md \
 			--from=markdown+yaml_metadata_block --to=revealjs \
@@ -106,7 +106,7 @@ revealjs-online:
 			--standalone --mathjax \
 			--variable revealjs-url=http://lab.hakim.se/reveal-js \
 			--filter=pandoc-citeproc --bibliography=bibliography.bib \
-			--output=output-revealjs-$(shell date +%Y%m%d).html; \
+			--output=output-revealjs-online-$(shell date +%Y%m%d).html; \
 	else \
 		pandoc markdown-test.md \
 			--from=markdown+yaml_metadata_block --to=revealjs \
