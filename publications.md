@@ -2,11 +2,9 @@
 layout: page
 title: Publications
 description: "List of all publications"
-
 ---
 
 ### Table of Contents:
-
 - [Papers](#papers)
 - [Talks](#talks)
 - [Posters](#posters)
@@ -16,7 +14,6 @@ description: "List of all publications"
 ### Papers
 
 ##### 2018
-
 - [Soplata AE, McCarthy MM, Sherfey J, Lee S, Purdon PL, Brown EN, et al.
   Thalamocortical control of propofol phase-amplitude coupling. PLOS
   Computational Biology. 2017;13: e1005879.
@@ -35,49 +32,40 @@ description: "List of all publications"
       repo](https://github.com/asoplata/dynasim-benchmark-brette-2007).
 
 ### Talks
-
 To see the actual source code for these talks, [go to the GitHub repo
 here.](https://github.com/asoplata/asoplata.github.io/tree/master/publications/talks/)
-
-- [2018-04-23 Monday, "Thalamic Control of Propofol Phase-amplitude Coupling" 
+- [2018-04-23 Monday, "Thalamic Control of Propofol Phase-amplitude Coupling"
   Cognitive Rhythms Collaborative Retreat, MIT,
   ](/publications/talks/20180423-crc-retreat/slides.html)
-
 - [2017-11-17 Friday, Git Introduction for BU CNSO, Boston University,
   ](/publications/talks/20171117-git-intro/slides.html) going over both the basics of
   Git and how to contribute to the [BU-CNSO website repo on
   GitHub!](https://github.com/bu-cnso/bu-cnso.github.io)
-
 - [2016-10-13 Thursday, NaK Group talk, Boston University,
   ](/publications/talks/20161013-nak-talk/slides.html) reviewing this paper:
-
 >   Niethard, N., Hasegawa, M., Itokazu, T., Oyanedel, C. N., Born, J., & Sato,
 >   T. R. (2016). Sleep-Stage-Specific Regulation of Cortical Excitation and
 >   Inhibition. Current Biology.
 >   [https://doi.org/10.1016/j.cub.2016.08.035](https://doi.org/10.1016/j.cub.2016.08.035)
 
 ### Posters
-
 To see the actual source code for this poster, [go to the GitHub repo
 here.](https://github.com/asoplata/asoplata.github.io/tree/master/publications/posters)
-
 - [A. SOPLATA; J. SHERFEY; E. BROWN; P. PURDON; N. KOPELL. Thalamic generation
   of propofol phase amplitude coupling. Program No. 507.13. Neuroscience 2016
   Abstracts. San Diego, CA: Society for Neuroscience, 2016.
   Online.](/publications/posters/2016-sfn/ASoplata-SFN2016-poster.pdf)
 
 ### Resources
-
 - I maintain public lists of:
-    - [Open Science 
+    - [Open Science
       Resources](https://github.com/asoplata/open-science-resources)
-    - [Open Computational Neuroscience 
+    - [Open Computational Neuroscience
       Resources](https://github.com/asoplata/open-computational-neuroscience-resources)
-    - [Random helpful lists, mostly of resources for learning 
+    - [Random helpful lists, mostly of resources for learning
       programming](https://github.com/asoplata/helpful-resources)
 
 ### Software
-
 - I try to make all the code/data for my publications as reproducible as
   possible. For code specific to each paper, see above.
 - I've contributed to [DynaSim, a very powerful ODE solver
@@ -92,12 +80,10 @@ here.](https://github.com/asoplata/asoplata.github.io/tree/master/publications/p
 - [Here is a working DynaSim
   implementation](https://github.com/asoplata/dynasim-krishnan-2016-model) for
   the thalamocortical model of the following paper:
-
 > Krishnan GP, Chauvette S, Shamie I, Soltani S, Timofeev I, Cash SS, et al.
 > Cellular and neurochemical basis of sleep stages in the thalamocortical
 > network. eLife. 2016;5: e18607.
 > [https://doi.org/10.7554/eLife.18607](https://doi.org/10.7554/eLife.18607)
-
 - [ya-pandoc-template](https://github.com/asoplata/ya-pandoc-template), a simple
   system (wrapper) combining a Makefile with Pandoc templates that lets you
   effortlessly turn Markdown content into HTML presentations, LaTeX documents,
@@ -111,6 +97,6 @@ here.](https://github.com/asoplata/asoplata.github.io/tree/master/publications/p
   very preliminary, possibly out of date program to convert Evernote XML files
   into Markdown files. In the future I'll probably make something like this
   for Evernote -> Emacs' Org mode.
-- [A collection of simple bash scripts](https://github.com/asoplata/bin) I find 
-  to be particularly helpful when searching across code and 
+- [A collection of simple bash scripts](https://github.com/asoplata/bin) I find
+  to be particularly helpful when searching across code and
   interacting/synchronizing files between my local computer and a cluster.

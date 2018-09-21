@@ -2,10 +2,7 @@
 title: |
     Sleep-Stage-Specific Regulation of Cortical Excitation and Inhibition
 layout: null
-
 ---
-
-
 [@niethard_sleep-stage-specific_2016]
 
 # Background
@@ -13,14 +10,12 @@ layout: null
 ##
 
 ### Sleep
-
 ![[@brown_general_2010] Fig 1A and C](figures/brown-2010-fig1a-c.png){ width=60%
 }
 
-## 
+##
 
 ### Sleep Rhythms
-
 - Slow-Wave Sleep (SWS)
     - Slow Waves/"Delta" waves:  0.5-4 Hz
     - Sleep spindles: 10~15 Hz
@@ -32,33 +27,28 @@ layout: null
 ##
 
 ### Results: *Dorsal PY Activity*
-
 ![[@niethard_sleep-stage-specific_2016] Fig
 1A](figures/niethard-2016-fig1a.png){ width=60% }
 
 ##
 
 ### Results: *Dorsal PY Activity*
-
 - (Show Movie 1)
 
 ##
 
 ### Results: *Dorsal PY Activity*
-
 ![[@niethard_sleep-stage-specific_2016] Fig
 1b-f](figures/niethard-2016-fig1b-f.png){ width=70% }
 
 ##
 
 ### Results: *Dorsal PY Activity*
-
 ![Fnorm definition](figures/fnorm.png)
 
 ##
 
 ### Results: *Dorsal PY Activity*
-
 - Main point: activity was maximal in wake, reduced in SWS, and, *contrary to
   expectations*, minimal in REM
 
@@ -67,21 +57,18 @@ layout: null
 ##
 
 ### Results: *Superficial Injections*
-
 ![[@niethard_sleep-stage-specific_2016] Fig
 2a-d](figures/niethard-2016-fig2a-d.png){ width=70% }
 
 ##
 
 ### Results: *Deep Injections*
-
 ![[@niethard_sleep-stage-specific_2016] Fig
 2e-h](figures/niethard-2016-fig2e-h.png){ width=70% }
 
 ##
 
 ### Results: *Deep/Superficial Injections*
-
 - Main point: the same decreasing activity level through wake->SWS->REM was seen
   in both superficial and deep layers of sensorimotor cortex.
 
@@ -90,28 +77,24 @@ layout: null
 ##
 
 ### Results: *PV-Cre Mouse*
-
 ![[@niethard_sleep-stage-specific_2016] Fig
 3a-d](figures/niethard-2016-fig3a-d.png){ width=70% }
 
 ##
 
 ### Results: *PV-Cre vs Total Activity*
-
 ![[@niethard_sleep-stage-specific_2016] Fig
 3e](figures/niethard-2016-fig3e.png){ width=70% }
 
 ##
 
 ### Results: *PV-/SOM-Cre vs Total Activity*
-
 ![[@niethard_sleep-stage-specific_2016] Fig 4](figures/niethard-2016-fig4.png){
 width=60% }
 
 ##
 
 ### Results: *PV-/SOM-Cre vs Total Activity*
-
 "These data demonstrate the specific activation of PV-INs during REM sleep,
 which is accompanied by the suppression of both pyramidal neural and SOM-IN
 activity...[This] suggests that the shift in the overall excitation/inhibition
@@ -121,20 +104,17 @@ balance toward predominant inhibition during REM sleep is conveyed by a
 ##
 
 ### The elephant in the room: REM should be MORE active than SWS!
-
 ![](figures/baby-elephant-sleeping.jpg)
 
 ##
 
 ### Results: *PV-/SOM-Cre vs Total Activity*
-
 ![[@niethard_sleep-stage-specific_2016] Fig 5](figures/niethard-2016-fig5.png){
 width=60% }
 
 ##
 
 ### Results: *PV-/SOM-Cre vs Total Activity*
-
 - They blame selection bias: "neurons that are active during the wake period
   might be more likely to be selected for extracellular recordings...and only
   those neurons might also show higher activity during REM sleep than SWS."
@@ -142,20 +122,17 @@ width=60% }
   also show higher activity during REM sleep, compared to SWS" -- this includes
   unlabeled cells, probably including PYs!
 
-
 # Results: *Exc/Inh Co-activation*
 
 ##
 
 ### Results: *Exc/Inh Co-activation*
-
 ![[@niethard_sleep-stage-specific_2016] Fig 6](figures/niethard-2016-fig6.png){
 width=80% }
 
 ##
 
 ### Results: *Exc/Inh Co-activation*
-
 - They claim this is accounted for by lower firing rates in REM because the rank
   correlation coefficients for the most active 20% of PY cells also showed
   significantly reduced correlations in SWS and REM compared to wake (data not
@@ -169,7 +146,6 @@ width=80% }
 ##
 
 ### Conclusions
-
 - They found global cortical activity decreases progressively from wake, to SWS,
   to REM.
     - This was the case for PY and SOM-IN cells in general, and was the case for
@@ -183,7 +159,6 @@ width=80% }
 ##
 
 ### Conclusions
-
 - They theorize that both
     - The balance of excitation/inhibition shifts towards inhibition in sleep,
       particularly in REM

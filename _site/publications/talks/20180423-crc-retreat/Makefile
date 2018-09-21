@@ -1,69 +1,121 @@
-# --css=${HOME}/.pandoc/templates/custom.css \
-# 		--variable revealjs-url=${HOME}/.pandoc/revealjs \
-# 		--variable revealjs-url=http://lab.hakim.se/reveal-js/js/reveal.js \
-# --mathjax=http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML \
-# --self-contained \
-
-html_bib:
-	pandoc *.md \
-		--from=markdown --to=revealjs \
-		--slide-level=2 --self-contained \
-		--mathml \
-		--variable revealjs-url=${HOME}/.pandoc/revealjs \
-		--variable theme=white \
-		--filter=pandoc-citeproc --bibliography=bibliography.bib \
-		--output=html_bib_slides.html
-
-beamer:
-	pandoc *.md \
-		--slide-level=2 --toc \
-		--from=markdown --to=beamer \
-		--template=custom \
-		--output=beamer_slides.pdf
-
-beamer_bib:
-	pandoc *.md \
-		--slide-level=2 --toc \
-		--from=markdown --to=beamer \
-		--template=custom \
-		--filter=pandoc-citeproc --bibliography=bibliography.bib \
-		--output=beamer_bib_slides.pdf
+# Note the uses of "\" to connect all lines in the if statements to make
+# Make think they're on the same line. Also note the use of ";" at end of
+# each individual command.
+#
+# Pandoc notes:
+# - HTML outputs need "--standalone" to have headers inserted, so that
+#   browsers can correctly encode (otherwise, single and double quotes
+#   will NOT display correctly with Firefox)
+# - HTML output requires "--mathjax" since Chrome refused to implement
+#   mathml, BUT this requires that you CANNOT use "--self-contained", so
+#   you MUST download a full local copy of reveal.js for its
+#   presentations.
+# - "--standalone" provides encoding headers/footers inside file directly
+#   (which is needed for Firefox etc. grr)
+# - "--self-contained" is ONLY used for HTML output, but does NOT WORK
+#   simultaneously with MathJax. So, basically, don't use it.
+#
+# TODO change all *.mds!
 
 html:
-	pandoc *.md \
-		--from=markdown --to=revealjs \
-		--slide-level=2 --self-contained --mathml \
-		--css=${HOME}/.pandoc/templates/custom.css \
-		--variable revealjs-url=${HOME}/.pandoc/revealjs \
-		--variable theme=white \
-		--output=html_slides.html
+	@if [ -f "bibliography.bib" ]; then \
+		pandoc *.md \
+			--from=markdown+yaml_metadata_block --to=html \
+			--standalone --mathjax --toc \
+			--filter=pandoc-citeproc --bibliography=bibliography.bib \
+			--output=output-html-$(shell date +%Y%m%d).html;\
+	else \
+		pandoc *.md \
+			--from=markdown+yaml_metadata_block --to=html \
+			--standalone --mathjax --toc \
+			--output=output-html-$(shell date +%Y%m%d).html; \
+	fi
+
+beamer:
+	@if [ -f "bibliography.bib" ]; then \
+		pandoc *.md \
+			--toc \
+			--from=markdown --to=beamer \
+			--template=custom \
+			--filter=pandoc-citeproc --bibliography=bibliography.bib \
+			--output=output-beamer-$(shell date +%Y%m%d).pdf; \
+	else \
+		pandoc *.md \
+			--toc \
+			--from=markdown --to=beamer \
+			--template=custom \
+			--output=output-beamer-$(shell date +%Y%m%d).pdf; \
+	fi
 
 manuscript:
-	pandoc *.md \
-		--from=markdown+latex_macros --to=latex \
-		--standalone \
-		--template=custom \
-		--output=manuscript_$(shell date +%Y%m%d).pdf
+	@if [ -f "bibliography.bib" ]; then \
+		pandoc *.md \
+			--from=markdown+latex_macros --to=latex \
+			--standalone \
+			--template=custom \
+			--filter=pandoc-citeproc --bibliography=bibliography.bib \
+			--output=output-manuscript-$(shell date +%Y%m%d).pdf; \
+	else \
+		pandoc *.md \
+			--from=markdown+latex_macros --to=latex \
+			--standalone \
+			--template=custom \
+			--output=output-manuscript-$(shell date +%Y%m%d).pdf; \
+	fi
 
-manuscript_bib:
-	pandoc *.md \
-		--from=markdown+latex_macros --to=latex \
-		--standalone \
-		--template=custom \
-		--filter=pandoc-citeproc --bibliography=bibliography.bib \
-		--output=manuscript_bib_$(shell date +%Y%m%d).pdf
-		
-manuscript_double:
-	pandoc *.md \
-		--from=markdown+latex_macros --to=latex \
-		--standalone \
-		--template=custom-double \
-		--output=manuscript_double_$(shell date +%Y%m%d).pdf
+manuscript-double:
+	@if [ -f "bibliography.bib" ]; then \
+		pandoc *.md \
+			--from=markdown+latex_macros --to=latex \
+			--standalone \
+			--template=custom-double \
+			--filter=pandoc-citeproc --bibliography=bibliography.bib \
+			--output=output-manuscript-double-$(shell date +%Y%m%d).pdf; \
+	else \
+		pandoc *.md \
+			--from=markdown+latex_macros --to=latex \
+			--standalone \
+			--template=custom-double \
+			--output=output-manuscript-double-$(shell date +%Y%m%d).pdf; \
+	fi
 
-manuscript_double_bib:
-	pandoc *.md \
-		--from=markdown+latex_macros --to=latex \
-		--standalone \
-		--template=custom \
-		--filter=pandoc-citeproc --bibliography=bibliography.bib \
-		--output=manuscript_double_bib_$(shell date +%Y%m%d).pdf
+revealjs-local:
+	@if [ ! -d "reveal.js" ]; then \
+		echo "        For revealjs to work (without the --self-contained flag), you MUST ";\
+		echo "        have a local copy downloaded of it as 'reveal.js' from";\
+		echo "  --->  'github.com:hakimel/reveal.js'.";\
+		echo "        Downloading this repo now...";\
+		git clone git@github.com:hakimel/reveal.js;\
+	fi
+	@if [ -f "bibliography.bib" ]; then\
+		pandoc *.md \
+			--from=markdown+yaml_metadata_block --to=revealjs \
+			--variable theme=white \
+			--standalone --mathjax \
+			--filter=pandoc-citeproc --bibliography=bibliography.bib \
+			--output=output-revealjs-$(shell date +%Y%m%d).html; \
+	else \
+		pandoc *.md \
+			--from=markdown+yaml_metadata_block --to=revealjs \
+			--variable theme=white \
+			--standalone --mathjax \
+			--output=output-revealjs-local-$(shell date +%Y%m%d).html; \
+	fi
+
+revealjs-online:
+	@if [ -f "bibliography.bib" ]; then \
+		pandoc *.md \
+			--from=markdown+yaml_metadata_block --to=revealjs \
+			--variable theme=white \
+			--standalone --mathjax \
+			--variable revealjs-url=http://lab.hakim.se/reveal-js \
+			--filter=pandoc-citeproc --bibliography=bibliography.bib \
+			--output=output-revealjs-$(shell date +%Y%m%d).html; \
+	else \
+		pandoc *.md \
+			--from=markdown+yaml_metadata_block --to=revealjs \
+			--variable theme=white \
+			--standalone --mathjax \
+			--variable revealjs-url=http://lab.hakim.se/reveal-js \
+			--output=output-revealjs-online-$(shell date +%Y%m%d).html; \
+	fi
