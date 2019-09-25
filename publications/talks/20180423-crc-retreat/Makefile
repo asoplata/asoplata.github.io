@@ -15,7 +15,7 @@
 # - "--self-contained" is ONLY used for HTML output, but does NOT WORK
 #   simultaneously with MathJax. So, basically, don't use it.
 #
-# TODO change all *.mds!
+# todo change all *.mds!
 
 html:
 	@if [ -f "bibliography.bib" ]; then \

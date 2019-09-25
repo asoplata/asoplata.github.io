@@ -11,7 +11,7 @@
 #   download a full local copy of reveal.js for its presentations.
 #
 #
-# TODO change all *.mds!
+# todo change all *.mds!
 
 beamer:
 	@if [ -f "bibliography.bib" ]; then\

@@ -29,7 +29,7 @@ into actually playing it. I like
 [transhumanism](https://en.wikipedia.org/wiki/Transhumanism) but am not a
 New Rationalist. I like too many videogames.
 I like vim but use emacs solely for [org-mode](http://orgmode.org/), since it
-seems to be the most future-proof, feature-rich TODO/organizational system I've
+seems to be the most future-proof, feature-rich todo/organizational system I've
 ever come across. I like donating to the [Free Software
 Foundation](http://www.fsf.org/) and especially the [Electronic Frontier
 Foundation](https://www.eff.org/), since their work is only going to become more
