@@ -4,13 +4,22 @@
  <title>Æsop</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2019-10-19T11:54:18-04:00</updated>
+ <updated>2019-10-19T12:18:00-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Austin Soplata</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>SFN Poster Available</title>
+   <link href="http://localhost:4000/2019/10/21/sfn-poster-available/"/>
+   <updated>2019-10-21T00:00:00-04:00</updated>
+   <id>http://localhost:4000/2019/10/21/sfn-poster-available</id>
+   <content type="html">&lt;p&gt;If you’d like to download my SFN 2019 poster “Cortical UP DOWN state synchrony drives propofol phase amplitude coupling in slow waves”, &lt;a href=&quot;/publications/posters/ASoplata-SFN2019-poster.pdf&quot;&gt;click here!&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>CRC Talk Available</title>

@@ -49,12 +49,16 @@ here.](https://github.com/asoplata/asoplata.github.io/tree/master/publications/t
 >   [https://doi.org/10.1016/j.cub.2016.08.035](https://doi.org/10.1016/j.cub.2016.08.035)
 
 ### Posters
-To see the actual source code for this poster, [go to the GitHub repo
-here.](https://github.com/asoplata/asoplata.github.io/tree/master/publications/posters)
-- [A. SOPLATA; J. SHERFEY; E. BROWN; P. PURDON; N. KOPELL. Thalamic generation
-  of propofol phase amplitude coupling. Program No. 507.13. Neuroscience 2016
-  Abstracts. San Diego, CA: Society for Neuroscience, 2016.
-  Online.](/publications/posters/2016-sfn/ASoplata-SFN2016-poster.pdf)
+- SFN 2019: [A. SOPLATA; M. MCCARTHY; E. ROBERTS; E. BROWN; P. PURDON; N. KOPELL. Cortical UP DOWN state synchrony drives propofol phase amplitude coupling in slow waves. Program No. 289.18. Neuroscience 2019 Abstracts. Chicago, IL: Society for Neuroscience, 2019. Online.](/publications/posters/ASoplata-SFN2019-poster.pdf)
+
+- SFN 2016: [A. SOPLATA; J. SHERFEY; E. BROWN; P. PURDON; N. KOPELL.
+  Thalamic generation of propofol phase amplitude coupling. Program No.
+  507.13. Neuroscience 2016 Abstracts. San Diego, CA: Society for
+  Neuroscience, 2016.
+  Online.](/publications/posters/ASoplata-SFN2016-poster.pdf)
+    - To see the actual source code for this poster, [go to the GitHub
+      repo
+      here.](https://github.com/asoplata/asoplata.github.io/tree/master/publications/posters)
 
 ### Resources
 - I maintain public lists of:

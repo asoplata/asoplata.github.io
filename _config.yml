@@ -20,7 +20,7 @@ author:
 
 # how do i even?
 # gems:             [jekyll-paginate]
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-feed
 paginate:         5
@@ -30,5 +30,6 @@ version:          2.1.0
 
 future:           true
 
-github:
-  repo:           https://github.com/asoplata/asoplata.github.io
+github: [metadata]
+# github:
+#   repo:           https://github.com/asoplata/asoplata.github.io
