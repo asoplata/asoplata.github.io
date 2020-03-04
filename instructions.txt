@@ -3,9 +3,23 @@
     - also maybe 'ruby-pkg-config' ?
     - nokogiri-1.8.1 needs package 'zlib1g-dev'
 
+- if can't run bundle, try updating RubyGems (not ruby) with 
+
+`sudo gem update --system`
+
 - Note: if on office, switch to /bin/bash to ruby
-- update regularly with `gem update` (especially the github-pages gem) then `bundle update`
-- serve locally on 4000 with `bundle exec jekyll serve`
+- update regularly with
+
+`gem update`
+
+(especially the github-pages gem) then
+
+`bundle update`
+
+- serve locally on 4000 with
+
+`bundle exec jekyll serve`
+
 - very helpful! http://joshualande.com/jekyll-github-pages-poole/ and https://ncmiller.github.io/2014/08/24/creating-jekyll-blog/ really just searching for jekyll website howtos is awesome
 
 - Jekyll or Poole? -specific things
