@@ -2,10 +2,17 @@
 - also, make sure 'ruby-dev' package installed for updating/building
     - also maybe 'ruby-pkg-config' ?
     - nokogiri-1.8.1 needs package 'zlib1g-dev'
+- also need libgdbm-compat-dev for package dbm
 
 - if can't run bundle, try updating RubyGems (not ruby) with 
 
+BE CAREFUL and don't use SUDO unless last resort
 `sudo gem update --system`
+
+
+- if reinstalling again, follow https://jekyllrb.com/docs/installation/ubuntu and run
+
+`gem install jekyll bundler`
 
 - Note: if on office, switch to /bin/bash to ruby
 - update regularly with
