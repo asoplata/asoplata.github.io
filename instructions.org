@@ -1,0 +1,35 @@
+
+* instructions for workin on wurbsite
+** Arch install locally (do NOT use sudo for any ruby!)
+*** apparently, despite Jekyll saying "use ruby 2.7 or higher" does NOT mean it works on ruby 3, which is currently does not (as of 20211006)
+*** from https://bbs.archlinux.org/viewtopic.php?id=265534
+#+begin_src bash
+  sudo pacman -Suy ruby2.7
+  # do not use gems
+  cd <WURBSITE>
+  bundle-2.7 install
+  bundle-2.7 exec jekyll serve
+  #+end_src
+** serve using
+#+begin_src shell
+bundle exec jekyll serve
+#+end_src
+
+** jekyll howtos
+*** very helpful! http://joshualande.com/jekyll-github-pages-poole/ and https://ncmiller.github.io/2014/08/24/creating-jekyll-blog/ really just searching for jekyll website howtos is awesome
+*** Jekyll or Poole? -specific things
+**** appears you can program hrefs, or anything, that are defined in '_config.yml' e.g. via `<link href="{{ site.url }}/"/>` or just put {{ site.title }} straight in html
+*** see http://downtothewire.io/2015/08/15/configuring-jekyll-for-user-and-project-github-pages/ for best practices
+** Ubuntu serve page locally
+*** if starting from scratch, install bundle via `gem install bundler`
+*** also, make sure 'ruby-dev' package installed for updating/building
+**** also maybe 'ruby-pkg-config' ?
+**** nokogiri-1.8.1 needs package 'zlib1g-dev'
+*** also need libgdbm-compat-dev for package dbm
+*** if reinstalling again, follow https://jekyllrb.com/docs/installation/ubuntu and run
+`gem install jekyll bundler`
+*** update regularly with
+`gem update`
+`bundle update`
+*** then serve locally on 4000 with
+`bundle exec jekyll serve`
