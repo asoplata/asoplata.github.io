@@ -4,13 +4,31 @@
  <title>Æsop</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2021-10-06T11:22:04-04:00</updated>
+ <updated>2022-03-10T12:43:16-05:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Austin Soplata</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>bioRxiv pre-print on modeling propofol and neuromodulation is out!</title>
+   <link href="http://localhost:4000/2022/03/10/biorxiv-out/"/>
+   <updated>2022-03-10T00:00:00-05:00</updated>
+   <id>http://localhost:4000/2022/03/10/biorxiv-out</id>
+   <content type="html">&lt;p&gt;If you’d like to &lt;a href=&quot;/publications/papers/Soplata-2022-neuromodulation.pdf&quot;&gt;download a PDF&lt;/a&gt; of my recent bioRxiv pre-print (currently undergoing
+peer-review) “Neuromodulation Due to Propofol Affects Anesthetic Oscillatory
+Coupling” &lt;a href=&quot;https://doi.org/10.1101/2022.02.17.48076&quot;&gt;https://doi.org/10.1101/2022.02.17.48076&lt;/a&gt; , then &lt;a href=&quot;/publications/papers/Soplata-2022-neuromodulation.pdf&quot;&gt;click
+here!&lt;/a&gt; It’s been a long
+time coming.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/publications&quot;&gt;For a broader list of my publications and other things I’ve done, including
+software, posters, talks, and online resources, click
+here!&lt;/a&gt;&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>SFN Poster Available</title>

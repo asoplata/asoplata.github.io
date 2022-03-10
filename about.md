@@ -3,38 +3,46 @@ layout: page
 title: About
 ---
 
-[@asoplata on Twitter. Say hi if you're here.](https://twitter.com/asoplata) I
-like [computational neuroscience, especially modeling
-neurons](https://en.wikipedia.org/wiki/Computational_neuroscience) and recently
-finished a PhD in it. I like [open
-science](https://en.wikipedia.org/wiki/Open_science). I REALLY like [the growing
-online community of open
-scientists](https://twitter.com/asoplata/lists/opencompneuroscience).  I like
-studying [thalamocortical
-oscillations](http://www.scholarpedia.org/article/Thalamocortical_oscillations),
-especially the dynamics of the thalamus under sleep and anesthesia. [Here is an
-example of my
-research.](http://asoplata.github.io/posters/ASoplata-SFN2016-poster.pdf) I like
-[helping develop the DynaSim MATLAB toolbox for simulating dynamical
-systems](https://github.com/dynasim/dynasim), even though I really don't like
-MATLAB and prefer Python. I like the [Brian2
-simulator](https://brian2.readthedocs.io/en/stable/) that some of DynaSim's
-design is based off of, and also like the [NetPyNE
-simulator](http://netpyne.org/). I like updating this website when I've had too
-much coffee and it's past my bedtime. I like [the Designers
-Republic](http://www.thedesignersrepublic.com/).  I like [Aphex
-Twin](https://warp.net/artists/aphex-twin/),
-[Autechre](https://autechre.bleepstores.com/), and lots of other great artists.
-I donate (sparingly) to the development of [Dwarf
-Fortress](http://www.bay12games.com/dwarves/) even though I can't really get
-into actually playing it. I like
-[transhumanism](https://en.wikipedia.org/wiki/Transhumanism) but am not a New
-Rationalist. I like too many videogames.  I love vim but have converted to Emacs
-after initially using it solely for [org-mode](http://orgmode.org/), since it is
-the most future-proof, feature-rich todo/organizational system I've ever come
-across. I like donating to the [Free Software Foundation](http://www.fsf.org/)
-and especially the [Electronic Frontier Foundation](https://www.eff.org/), since
-their work is only going to become more important.  This site currently uses the
-<a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme <a
-href="http://lanyon.getpoole.com" target="_blank">Lanyon</a>, graciously hosted
-by <a href="https://pages.github.com" target="_blank">GitHub Pages</a>.
+
+I'm currently a post-doc at the [Neuroscience Statistics Research Lab](https://www.neurostat.mit.edu/)
+at MIT and am employed by [Massachusetts General
+Hospital](https://www.massgeneral.org/). I work under [Emery
+N. Brown](https://hst.mit.edu/faculty-research/faculty/brown-emery) and [Nancy
+Kopell](http://math.bu.edu/people/nk/) in order to investigate how anesthesia
+enables loss of consciousness. I do this through the classic
+[computational
+neuroscience](https://en.wikipedia.org/wiki/Computational_neuroscience) method
+of simulating
+[Hodgkin-Huxley](https://en.wikipedia.org/wiki/Hodgkin–Huxley_model) neural
+networks, focusing on [thalamocortical
+oscillations](http://www.scholarpedia.org/article/Thalamocortical_oscillations)
+in particular. This
+allows us to non-invasively probe how the cell- and synapse-specific effects of anesthetics like
+[propofol](https://en.wikipedia.org/wiki/Propofol) can change both your
+consciousness and your brain's EEG, producing [fascinating dynamics of interacting
+oscillations](https://www.jneurosci.org/content/34/3/839.long). These brain
+rhythms resemble sleep activity in some ways, [but are very different in other ways!](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005879)
+
+[I'm @asoplata on Twitter. Say hi if you're here!](https://twitter.com/asoplata) 
+
+I'm also very interested in how these same thalamocortical networks contribute to
+[memory consolidation in (mostly) sleep using oscillations of similar frequencies to
+those of
+anesthesia](http://www.scholarpedia.org/article/Thalamocortical_oscillations#Sleep_spindle_oscillations),
+via the co-occurrence of hippocampal sharp-wave ripples with thalamic spindles
+and thalamocortical slow wave oscillations. The neuroscience of memory is a very
+active field of research, but the role of sleep in memory has not been studied
+as much and is likely ripe for discoveries. There's never enough time to
+investigate all the directions that are exciting!
+
+I believe the future of science is open science, on a personal, ethical, and
+practical level. Frankly, though it may surprise you, computational neuroscience
+has some catching up to do in this department, though it is improving rapidly. I
+feel very strongly about open-sourcing all the tools, code, and parameters I use to perform
+this work.
+
+Neural networks in the brain are complicated, messy, and diverse. Simulating
+them to uncover their fundamental mechanisms is fascinating, requiring both
+rigorous attention-to-detail and flexibility at the same time. For neuroscience,
+the vast majority of our work lies ahead of us, despite what it may seem like at
+times.
