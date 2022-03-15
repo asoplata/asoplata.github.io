@@ -60,7 +60,7 @@ here.](https://github.com/asoplata/asoplata.github.io/tree/master/publications/t
   Thalamus Trainees Meeting Group](/publications/talks/20210310-thalamus-trainees.pdf)
 - [2018-04-23 Monday, "Thalamic Control of Propofol Phase-amplitude Coupling"
   Cognitive Rhythms Collaborative Retreat, MIT
-  ](/publications/talks/20180423-crc-retreat/slides.html)
+  ](/publications/talks/20180423-crc-retreat/20180423-crc-retreat.html)
 - [2017-11-17 Friday, Git Introduction for BU CNSO, Boston University,
   ](/publications/talks/20171117-git-intro/slides.html) going over both the basics of
   Git and how to contribute for the Computational Neuroscience Students Organization
