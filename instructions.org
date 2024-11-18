@@ -28,12 +28,24 @@
 **** from https://stackoverflow.com/a/9949139
 ***** libtool
 ***** libyaml-dev
+**** collated <2024-11-18 Mon>
+ruby-dev
+ruby-full
+build-essential
+zlib1g-dev
+libssl-dev
+libreadline-dev
+libgdbm-dev
+libgdbm-compat-dev
+libtool
+libyaml-dev
 ** non specific
 *** jekyll howtos
 **** very helpful! http://joshualande.com/jekyll-github-pages-poole/ and https://ncmiller.github.io/2014/08/24/creating-jekyll-blog/ really just searching for jekyll website howtos is awesome
 **** Jekyll or Poole? -specific things
 ***** appears you can program hrefs, or anything, that are defined in '_config.yml' e.g. via `<link href="{{ site.url }}/"/>` or just put {{ site.title }} straight in html
-**** see http://downtothewire.io/2015/08/15/configuring-jekyll-for-user-and-project-github-pages/ for best practices*** if reinstalling again, follow https://jekyllrb.com/docs/installation/ubuntu and run
+**** see http://downtothewire.io/2015/08/15/configuring-jekyll-for-user-and-project-github-pages/ for best practices
+*** if reinstalling again, follow https://jekyllrb.com/docs/installation/ubuntu and run
 `gem install jekyll bundler`
 *** update regularly with
 `gem update`
