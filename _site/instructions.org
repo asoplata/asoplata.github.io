@@ -39,6 +39,24 @@ libgdbm-dev
 libgdbm-compat-dev
 libtool
 libyaml-dev
+** mac
+*** install
+#+begin_src bash
+brew install rbenv
+rbenv install 3.3.6 # or whatever the latest stable is from `rbenv install -l`
+rbenv local 3.3.6
+rbenv shell 3.3.6 # after running `rbenv init` and adding it to the rc files
+brew install node # for academic pages
+# then below
+#+end_src
+*** update and run
+#+begin_src bash
+rbenv shell 3.3.6
+gem install bundler jekyll
+gem update
+bundle update
+bundle exec jekyll serve
+#+end_src
 ** non specific
 *** jekyll howtos
 **** very helpful! http://joshualande.com/jekyll-github-pages-poole/ and https://ncmiller.github.io/2014/08/24/creating-jekyll-blog/ really just searching for jekyll website howtos is awesome

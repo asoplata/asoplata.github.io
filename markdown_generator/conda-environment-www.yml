@@ -1,0 +1,9 @@
+name: www
+dependencies:
+  - python=3.12
+  - conda-forge::jupyterlab
+  - pandas
+  - pdbpp
+  - pybtex
+  # - pip:
+  #     - jupyter
