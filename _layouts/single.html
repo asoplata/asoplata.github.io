@@ -47,16 +47,13 @@ layout: default
       <section class="page__content" itemprop="text">
         {{ content }}
 
-        {% if page.citation and page.paperurl and page.slidesurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.slidesurl }}">Download Slides</a></p>
-        {% elsif page.citation and page.paperurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><br /><a href="{{ page.paperurl }}">Download PDF Here</a></p>
-        {% elsif page.citation and page.slidesurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.slidesurl }}">Download Slides</a></p>
-        {% elsif page.citation %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}</p>
+        {% if page.citation and page.paperurl and page.doiurl %}
+          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><br />
+          <a href="{{ page.paperurl }}">Download local PDF here</a><br />
+          <a href="{{ page.doiurl }}">Access official paper URL here</a>
+          </p>
         {% elsif page.slidesurl %}
-          <p style="font-size: smaller"><a href="{{ page.slidesurl }}">Download Slides</a></p>
+          <p style="font-size: smaller"><a href="{{ page.slidesurl }}">Access Slides Here</a></p>
         {% endif %}
 
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}

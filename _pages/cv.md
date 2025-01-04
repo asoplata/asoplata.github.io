@@ -7,7 +7,7 @@ redirect_from:
   - /resume
 ---
 
-For an out-of-date version of my CV, <a href="/files/austin-soplata-cv-out-of-date.pdf">click here for a PDF</a>.
+For a slightly out-of-date version of my CV, <a href="/files/austin-soplata-cv-out-of-date.pdf">click here for a PDF</a>.
 
 <!-- {% include base_path %} -->
 

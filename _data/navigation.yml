@@ -8,11 +8,14 @@ main:
   - title: "Publications"
     url: /publications/
 
-  - title: "Talks"
+  - title: "Talks and Posters"
     url: /talks/
 
-  - title: "Blog Posts"
-    url: /year-archive/
+  # - title: "Blog Posts"
+  #   url: /year-archive/
+
+  - title: "Software"
+    url: /software/
 
   - title: "CV"
     url: /cv/
