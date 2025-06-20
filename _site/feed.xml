@@ -1,1 +1,430 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-01-04T01:12:21+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Austin E. Soplata, PhD</title><subtitle>personal description</subtitle><author><name>Austin E. Soplata, PhD</name><email>me@asoplata.com</email></author></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-20T19:55:31+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Austin E. Soplata, PhD</title><subtitle>personal description</subtitle><author><name>Austin E. Soplata, PhD</name><email>me@asoplata.com</email></author><entry><title type="html">Python debugging inside testing</title><link href="http://localhost:4000/posts/2025/06/python-test-debugging" rel="alternate" type="text/html" title="Python debugging inside testing" /><published>2025-06-20T00:00:00+00:00</published><updated>2025-06-20T00:00:00+00:00</updated><id>http://localhost:4000/posts/2025/06/python-test-debugging</id><content type="html" xml:base="http://localhost:4000/posts/2025/06/python-test-debugging"><![CDATA[<h1 id="table-of-contents">Table of Contents:</h1>
+
+<ul>
+  <li><a href="#preamble-and-helpful-links">Preamble and helpful links</a></li>
+  <li><a href="#pdb-the-python-debugger"><code class="language-plaintext highlighter-rouge">pdb</code>: the Python debugger</a></li>
+  <li><a href="#enhancing-pdb">Enhancing <code class="language-plaintext highlighter-rouge">pdb</code></a></li>
+  <li><a href="#invoking-pytest">Invoking <code class="language-plaintext highlighter-rouge">pytest</code></a></li>
+  <li><a href="#using-pdb-with-pytest">Using <code class="language-plaintext highlighter-rouge">pdb</code> with <code class="language-plaintext highlighter-rouge">pytest</code></a></li>
+</ul>
+
+<hr />
+
+<h1 id="preamble-and-helpful-links">Preamble and helpful links</h1>
+
+<p>Firstly, here’s some sites elsewhere on the web that cover the same / similar things:</p>
+<ul>
+  <li><a href="https://seleniumbase.com/the-ultimate-pytest-debugging-guide-2021/">https://seleniumbase.com/the-ultimate-pytest-debugging-guide-2021/</a></li>
+  <li><a href="https://docs.pytest.org/en/6.2.x/usage.html#dropping-to-pdb-python-debugger-on-failures">https://docs.pytest.org/en/6.2.x/usage.html#dropping-to-pdb-python-debugger-on-failures</a></li>
+  <li><a href="https://docs.pytest.org/en/stable/"><code class="language-plaintext highlighter-rouge">pytest</code> itself</a></li>
+  <li><a href="https://docs.python.org/3/library/pdb.html#module-pdb"><code class="language-plaintext highlighter-rouge">pdb</code> itself</a></li>
+</ul>
+
+<p>Let’s start by making the following assumptions:</p>
+<ul>
+  <li>You’re working on a Python codebase, and this codebase uses a test suite based on the <a href="https://docs.pytest.org/en/stable/">pytest</a> testing framework.</li>
+  <li>You’re relatively new to both software testing and Python debugging in general.</li>
+  <li>You have checked out the code, started adding a new feature, and have run the tests. However, the tests have broken, and in a <em>complex</em> and non-obvious way.</li>
+</ul>
+
+<p>You may be asking: <strong>How can I get started inspecting or debugging what the issue is?</strong> Let’s answer that.</p>
+
+<hr />
+
+<h1 id="pdb-the-python-debugger"><code class="language-plaintext highlighter-rouge">pdb</code>: the Python debugger</h1>
+
+<p>First, let’s ignore testing (<code class="language-plaintext highlighter-rouge">pytest</code>) for a moment and discuss debugging.</p>
+
+<p>Many code development programs (often called Integrated Development Environments (IDEs)) include their own integrated features for debugging Python code: for VS Code <a href="https://code.visualstudio.com/docs/python/debugging">see here</a>, for PyCharm <a href="https://www.jetbrains.com/help/pycharm/part-1-debugging-python-code.html">see here</a>, and for Spyder <a href="https://docs.spyder-ide.org/5/panes/debugging.html">see here</a>, etc. These can be easy or difficult to use, depending on the choice of IDE, how complex your Python installation environment is, how you’ve setup your tests, etc.</p>
+
+<p>One thing you can <em>always</em> rely on is that Python also includes <em>its own</em> support for debugging inside every Python install; this is called <code class="language-plaintext highlighter-rouge">pdb</code>, and you can find the docs here <a href="https://docs.python.org/3/library/pdb.html#module-pdb">https://docs.python.org/3/library/pdb.html#module-pdb</a>. Even if you mainly program in an aforementioned IDE, you can always open a command line, activate your Python environment, and then use <code class="language-plaintext highlighter-rouge">pdb</code> to debug your code. This includes using it on remote servers, wherever your code is installed (such as over <code class="language-plaintext highlighter-rouge">ssh</code>)!</p>
+
+<p>The most common way to use <code class="language-plaintext highlighter-rouge">pdb</code> for debugging is to insert the following function call into your code, anywhere. Note that this is one of the few built-in functions which are <em>always</em> available (<a href="https://docs.python.org/3/library/functions.html#breakpoint">see here</a>), and therefore you do not need to import anything for it (assuming you’re using Python 3.7 or later)!</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">breakpoint</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Let’s start using a real example. Let’s say you are trying to make changes to <a href="https://hnn.brown.edu"><code class="language-plaintext highlighter-rouge">hnn_core</code></a>’s <code class="language-plaintext highlighter-rouge">Network</code> class (<a href="https://github.com/jonescompneurolab/hnn-core/blob/master/hnn_core/network.py">here</a>). Let’s also say that you have built your own little run script that you’ve been using for testing and using your changes to <code class="language-plaintext highlighter-rouge">Network</code>, based off of our <a href="https://github.com/jonescompneurolab/hnn-core/blob/master/examples/howto/plot_firing_pattern.py">firing pattern example code here</a>. <em>Then</em> let’s say that you want to inspect certain attributes in an instantiated <code class="language-plaintext highlighter-rouge">Network</code> object, just to confirm that your changes have been applied. Let’s look at the code from lines 22-29 of <code class="language-plaintext highlighter-rouge">hnn-core/examples/howto/plot_firing_pattern.py</code>: <a href="https://github.com/jonescompneurolab/hnn-core/blob/master/examples/howto/plot_firing_pattern.py#L22-L29">https://github.com/jonescompneurolab/hnn-core/blob/master/examples/howto/plot_firing_pattern.py#L22-L29</a>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">###############################################################################
+# Now let's build the network. We have used the same weights as in the
+# :ref:`evoked example &lt;sphx_glr_auto_examples_plot_simulate_evoked.py&gt;`.
+</span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">net</span> <span class="o">=</span> <span class="n">jones_2009_model</span><span class="p">()</span>
+
+<span class="c1">###############################################################################
+</span></code></pre></div></div>
+
+<p>I want to inspect what this <code class="language-plaintext highlighter-rouge">Network</code> object looks like after it’s created, but before the drives are added, and one way I can do this is by adding <code class="language-plaintext highlighter-rouge">breakpoint()</code> into this file, changing the code to look like this:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">###############################################################################
+# Now let's build the network. We have used the same weights as in the
+# :ref:`evoked example &lt;sphx_glr_auto_examples_plot_simulate_evoked.py&gt;`.
+</span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">net</span> <span class="o">=</span> <span class="n">jones_2009_model</span><span class="p">()</span>
+
+<span class="n">breakpoint</span><span class="p">()</span>
+
+<span class="c1">###############################################################################
+</span></code></pre></div></div>
+
+<p>Next, I run the file like normal:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python plot_firing_pattern.py
+</code></pre></div></div>
+
+<p>Instead of the usual output, instead I’m “dropped” into “<code class="language-plaintext highlighter-rouge">pdb</code> debugger console” that looks like the following:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; /Users/austinsoplata/rep/brn/hnn-core/examples/howto/plot_firing_pattern.py(29)&lt;module&gt;()
+-&gt; breakpoint()
+(Pdb)
+</code></pre></div></div>
+
+<p>The program is now waiting on your input; this is similar to, but a little different from, a regular Python console or IPython console. The debugger has run the code up until <code class="language-plaintext highlighter-rouge">breakpoint()</code>, but not the code afterwards.</p>
+
+<p>From here, you can do a lot of things, and those are shown by sending the command <code class="language-plaintext highlighter-rouge">h</code> to the debugger console (which is short for <code class="language-plaintext highlighter-rouge">help</code>):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; /Users/austinsoplata/rep/brn/hnn-core/examples/howto/plot_firing_pattern.py(29)&lt;module&gt;()
+-&gt; breakpoint()
+(Pdb) h
+
+Documented commands (type help &lt;topic&gt;):
+========================================
+EOF    cl         disable     ignore    n        return  u          where
+a      clear      display     interact  next     retval  unalias
+alias  commands   down        j         p        run     undisplay
+args   condition  enable      jump      pp       rv      unt
+b      cont       exceptions  l         q        s       until
+break  continue   exit        list      quit     source  up
+bt     d          h           ll        r        step    w
+c      debug      help        longlist  restart  tbreak  whatis
+
+Miscellaneous help topics:
+==========================
+exec  pdb
+
+(Pdb)
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">h</code> prints out the help menu, including all the commands that you can run inside the debugger console. Again, think of the debugger console as a slightly different version of the “console” you get when you run <code class="language-plaintext highlighter-rouge">python</code> by itself. This is very powerful, and I don’t have time to explain everything, but I will review some of the most common commands. See the list of websites at the beginning of this post for helpful explanations of all the commands.</p>
+
+<p><code class="language-plaintext highlighter-rouge">l</code> (short for <code class="language-plaintext highlighter-rouge">list</code>) shows us which line of code the debugger is currently stopped at, using a little arrow:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(Pdb) l
+ 24     # :ref:`evoked example &lt;sphx_glr_auto_examples_plot_simulate_evoked.py&gt;`.
+ 25     import matplotlib.pyplot as plt
+ 26
+ 27     net = jones_2009_model()
+ 28
+ 29  -&gt; breakpoint()
+ 30
+ 31     ###############################################################################
+ 32     # ``net`` does not have any driving inputs and only defines the local network
+ 33     # connectivity. Let us go ahead and first add a distal evoked drive.
+ 34     # We need to define the AMPA and NMDA weights for the connections. An
+</code></pre></div></div>
+
+<p>If you also use an IDE, this is analogous to when you click and add a breakpoint to a specific line, then run your IDE’s debugger, and then your IDE highlights and stops at that line.</p>
+
+<p>The function <code class="language-plaintext highlighter-rouge">dir()</code> (notice the parens) will print out all the names in our namespace, including any variables we have:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(Pdb) dir()
+['__annotations__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__pdb_convenience_variables', '__spec__', 'hnn_core', 'jones_2009_model', 'net', 'op', 'plt', 'read_spikes', 'simulate_dipole', 'tempfile']
+</code></pre></div></div>
+
+<p>Recall that we were interested in our <code class="language-plaintext highlighter-rouge">Network</code> object. Similarly to a <code class="language-plaintext highlighter-rouge">python</code> or <code class="language-plaintext highlighter-rouge">ipython</code> console, we can type out the name of a variable to print out its value:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(Pdb) net
+&lt;Network | 35 L2_basket cells
+100 L2_pyramidal cells
+35 L5_basket cells
+100 L5_pyramidal cells&gt;
+</code></pre></div></div>
+
+<p>We can also inspect nested attributes or methods of an object in the console as well:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(Pdb) net.connectivity[1]
+L2_pyramidal -&gt; L2_pyramidal
+cell counts: 100 srcs, 100 targets
+connection probability: 1.0
+loc: 'proximal'; receptor: 'ampa'
+weight: 0.0005; delay: 1.0; lamtha: 3.0
+</code></pre></div></div>
+
+<p>This could then be where you inspect to make sure that your code changes have had their desired effect.</p>
+
+<p>Now, let’s say we want to continue through the <code class="language-plaintext highlighter-rouge">plot_firing_pattern.py</code> file, but ONLY to the point after the first <code class="language-plaintext highlighter-rouge">net.add_evoked_drive(...)</code> function is run. There are many ways to do this but here are two:</p>
+
+<p>You can use the command <code class="language-plaintext highlighter-rouge">n</code> in the debugger to advance to the “<code class="language-plaintext highlighter-rouge">next</code>” line:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(Pdb) n
+&gt; /Users/austinsoplata/rep/brn/hnn-core/examples/howto/plot_firing_pattern.py(38)&lt;module&gt;()
+-&gt; weights_ampa_d1 = {'L2_basket': 0.006562, 'L2_pyramidal': 7e-6,
+(Pdb) l
+ 33     # connectivity. Let us go ahead and first add a distal evoked drive.
+ 34     # We need to define the AMPA and NMDA weights for the connections. An
+ 35     # "evoked drive" defines inputs that are normally distributed with a certain
+ 36     # mean and standard deviation.
+ 37
+ 38  -&gt; weights_ampa_d1 = {'L2_basket': 0.006562, 'L2_pyramidal': 7e-6,
+ 39                        'L5_pyramidal': 0.142300}
+ 40     weights_nmda_d1 = {'L2_basket': 0.019482, 'L2_pyramidal': 0.004317,
+ 41                        'L5_pyramidal': 0.080074}
+ 42     synaptic_delays_d1 = {'L2_basket': 0.1, 'L2_pyramidal': 0.1,
+ 43                           'L5_pyramidal': 0.1}
+</code></pre></div></div>
+
+<p>See how the arrow shown after <code class="language-plaintext highlighter-rouge">l</code> indicates that the program is now at line 38. Let’s run <code class="language-plaintext highlighter-rouge">n</code> a few more times, then see where we end up:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(Pdb) n
+&gt; /Users/austinsoplata/rep/brn/hnn-core/examples/howto/plot_firing_pattern.py(39)&lt;module&gt;()
+-&gt; 'L5_pyramidal': 0.142300}
+(Pdb) n
+&gt; /Users/austinsoplata/rep/brn/hnn-core/examples/howto/plot_firing_pattern.py(38)&lt;module&gt;()
+-&gt; weights_ampa_d1 = {'L2_basket': 0.006562, 'L2_pyramidal': 7e-6,
+(Pdb) l
+ 33     # connectivity. Let us go ahead and first add a distal evoked drive.
+ 34     # We need to define the AMPA and NMDA weights for the connections. An
+ 35     # "evoked drive" defines inputs that are normally distributed with a certain
+ 36     # mean and standard deviation.
+ 37
+ 38  -&gt; weights_ampa_d1 = {'L2_basket': 0.006562, 'L2_pyramidal': 7e-6,
+ 39                        'L5_pyramidal': 0.142300}
+ 40     weights_nmda_d1 = {'L2_basket': 0.019482, 'L2_pyramidal': 0.004317,
+ 41                        'L5_pyramidal': 0.080074}
+ 42     synaptic_delays_d1 = {'L2_basket': 0.1, 'L2_pyramidal': 0.1,
+ 43                           'L5_pyramidal': 0.1}
+</code></pre></div></div>
+
+<p>Huh???? We just ran the “run next line” command several times, but we’re still at line 38! What gives? Well, as it turns out, debuggers frequently do this for any command that spans multiple lines. They proceed through each line of the multiline command before “finishing” at the first line of the command. Only then do they proceed to the next “real” line of code. If we type <code class="language-plaintext highlighter-rouge">n</code> again, we will see that the program will not go to line 39, but instead end up at line 40 (the beginning of the next “real” command):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(Pdb) n
+&gt; /Users/austinsoplata/rep/brn/hnn-core/examples/howto/plot_firing_pattern.py(40)&lt;module&gt;()
+-&gt; weights_nmda_d1 = {'L2_basket': 0.019482, 'L2_pyramidal': 0.004317,
+(Pdb) l
+ 35     # "evoked drive" defines inputs that are normally distributed with a certain
+ 36     # mean and standard deviation.
+ 37
+ 38     weights_ampa_d1 = {'L2_basket': 0.006562, 'L2_pyramidal': 7e-6,
+ 39                        'L5_pyramidal': 0.142300}
+ 40  -&gt; weights_nmda_d1 = {'L2_basket': 0.019482, 'L2_pyramidal': 0.004317,
+ 41                        'L5_pyramidal': 0.080074}
+ 42     synaptic_delays_d1 = {'L2_basket': 0.1, 'L2_pyramidal': 0.1,
+ 43                           'L5_pyramidal': 0.1}
+ 44     net.add_evoked_drive(
+ 45         'evdist1', mu=63.53, sigma=3.85, numspikes=1, weights_ampa=weights_ampa_d1,
+</code></pre></div></div>
+
+<p>As expected, now we’re at the next <code class="language-plaintext highlighter-rouge">weights...</code> setting line.</p>
+
+<p>However, as we said before, where we really want to be is after the <code class="language-plaintext highlighter-rouge">net.add_evoked_drive(...</code> call. Another faster way to get there is the following: let’s set a new, additional breakpoint from inside the debugger itself (the command <code class="language-plaintext highlighter-rouge">b</code>) at a later line (line 54):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(Pdb) b 54
+Breakpoint 1 at /Users/austinsoplata/rep/brn/hnn-core/examples/howto/plot_firing_pattern.py:54
+</code></pre></div></div>
+
+<p>Then, we can use <code class="language-plaintext highlighter-rouge">c</code> to <code class="language-plaintext highlighter-rouge">continue</code> the program until the next breakpoint (or until the end of the program, whichever comes first):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(Pdb) c
+&gt; /Users/austinsoplata/rep/brn/hnn-core/examples/howto/plot_firing_pattern.py(54)&lt;module&gt;()
+-&gt; weights_ampa_p1 = {'L2_basket': 0.08831, 'L2_pyramidal': 0.01525,
+(Pdb) l
+ 49     ###############################################################################
+ 50     # The reason it is called an "evoked drive" is it can be used to simulate
+ 51     # waveforms resembling evoked responses. Here, we show how to do it with two
+ 52     # proximal drives which drive current up the dendrite and one distal drive
+ 53     # which drives current down the dendrite producing the negative deflection.
+ 54 B-&gt; weights_ampa_p1 = {'L2_basket': 0.08831, 'L2_pyramidal': 0.01525,
+ 55                        'L5_basket': 0.19934, 'L5_pyramidal': 0.00865}
+ 56     synaptic_delays_prox = {'L2_basket': 0.1, 'L2_pyramidal': 0.1,
+ 57                             'L5_basket': 1., 'L5_pyramidal': 1.}
+ 58
+ 59     # all NMDA weights are zero; pass None explicitly
+</code></pre></div></div>
+
+<p>To be clear, when a program being debugged arrives at a line with a breakpoint like line 54 above, you can think of the breakpoint as “up to, but not including” the line. In other words, <em>line 54 has not been executed yet</em>, but all the code before it has. We can confirm this by testing if <code class="language-plaintext highlighter-rouge">weight_ampa_p1</code> has been created:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(Pdb) weights_ampa_p1
+*** NameError: name 'weights_ampa_p1' is not defined
+</code></pre></div></div>
+
+<p>The final thing I will review for typical <code class="language-plaintext highlighter-rouge">pdb</code> usage is that, just like a regular <code class="language-plaintext highlighter-rouge">python</code> or <code class="language-plaintext highlighter-rouge">ipython</code> console, you can re-define variables in the middle of the program being executed. For example, we can do the following, which will eventually break our program:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(Pdb) net = ['asdf']
+(Pdb) net
+['asdf']
+</code></pre></div></div>
+
+<p>In the middle of the program, we have changed <code class="language-plaintext highlighter-rouge">net</code> from a valid <code class="language-plaintext highlighter-rouge">Network</code> object to one that is a list with a silly string in it. If we use <code class="language-plaintext highlighter-rouge">c</code> to continue the program, it will try to run the program to the end (since there are no more breakpoints), but our program will break the next time that we use <code class="language-plaintext highlighter-rouge">net</code>, since <code class="language-plaintext highlighter-rouge">net</code> has been significantly changed:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(Pdb) c
+Traceback (most recent call last):
+  File "/Users/austinsoplata/rep/brn/hnn-core/examples/howto/plot_firing_pattern.py", line 60, in &lt;module&gt;
+    net.add_evoked_drive(
+    ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'add_evoked_drive'
+</code></pre></div></div>
+
+<p>Speaking of <code class="language-plaintext highlighter-rouge">pdb</code> in general, there are other ways to invoke <code class="language-plaintext highlighter-rouge">pdb</code>, as mentioned in its <a href="https://docs.python.org/3/library/pdb.html#module-pdb">documentation</a>, but <code class="language-plaintext highlighter-rouge">breakpoint()</code> is probably the most frequent and easy. For example, we could start our program already inside the debugger without any pre-established breakpoints using.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python -m pdb plot_firing_pattern.py
+</code></pre></div></div>
+
+<hr />
+
+<h1 id="enhancing-pdb">Enhancing <code class="language-plaintext highlighter-rouge">pdb</code></h1>
+
+<p>There are at least several attempts to make <code class="language-plaintext highlighter-rouge">pdb</code> and related usage more user-friendly, convenient, and powerful, including both:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">pdbpp</code>: <a href="https://github.com/pdbpp/pdbpp">https://github.com/pdbpp/pdbpp</a>, my personal favorite, which is very configurable and provides things like syntax highlighting, better tab completion, “sticky mode”, and seems to work in-place with <code class="language-plaintext highlighter-rouge">pytest</code> support. You can install it with <code class="language-plaintext highlighter-rouge">pip install pdbpp</code>. It specifically advertises itself as a “drop-in replacement”, meaning that <strong>it will take the place of your regular <code class="language-plaintext highlighter-rouge">pdb</code> usage by default</strong> (which is very convenient).</li>
+  <li><code class="language-plaintext highlighter-rouge">ipdb</code>: <a href="https://github.com/gotcha/ipdb">https://github.com/gotcha/ipdb</a></li>
+</ul>
+
+<hr />
+
+<h1 id="invoking-pytest">Invoking <code class="language-plaintext highlighter-rouge">pytest</code></h1>
+
+<p>“Okay Austin”, you say, “that’s great but you’ve gotten off-topic from <code class="language-plaintext highlighter-rouge">pytest</code>” Correct. Let’s do the converse: let’s ignore <code class="language-plaintext highlighter-rouge">pdb</code> for now and only discuss how to control execution of our tests.</p>
+
+<p>Most uses of <code class="language-plaintext highlighter-rouge">pytest</code> testing framework involve running the command <code class="language-plaintext highlighter-rouge">pytest</code>, followed specifically by the files where your tests are located, followed by options, such as <a href="https://github.com/jonescompneurolab/hnn-core/blob/e80b546747e0468c5a8fdecdac3aac9b9ae80070/Makefile#L61">shown here</a> and pasted below:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pytest ./hnn_core/tests/ -m "uses_mpi"
+</code></pre></div></div>
+
+<p>This command is assumed to be running from the top-level directory of where your <a href="https://github.com/jonescompneurolab/hnn-core">https://github.com/jonescompneurolab/hnn-core</a> source code is located (i.e. inside <code class="language-plaintext highlighter-rouge">hnn-core</code>, <em>not</em> inside its sub-directory <code class="language-plaintext highlighter-rouge">hnn_core</code>). Let’s ignore the <code class="language-plaintext highlighter-rouge">-m "uses_mpi</code> part of the <code class="language-plaintext highlighter-rouge">pytest</code> call.</p>
+
+<p>You could run <em>all</em> of our tests by using the following from the command line, and from inside <code class="language-plaintext highlighter-rouge">hnn-core</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pytest ./hnn_core/tests/
+</code></pre></div></div>
+
+<p>This runs all of the tests inside the <code class="language-plaintext highlighter-rouge">hnn-core/hnn_core/tests</code> directory.</p>
+
+<p>However, let’s say that you’re only interested in a single one of the test files. You could run only the tests in that specific file by passing only that filename in the invocation (instead of the directory), using the following:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pytest ./hnn_core/tests/test_network.py
+</code></pre></div></div>
+
+<p>Let’s go further, and say you’re only interested in one <em>specific</em> test from that file. You can actually run only that specific test through the command-line as well! For example, let’s say I only want to run the test called <code class="language-plaintext highlighter-rouge">test_network_models()</code> (<a href="https://github.com/jonescompneurolab/hnn-core/blob/master/hnn_core/tests/test_network.py#L94">code here</a>) inside the file mentioned above. I would then add <code class="language-plaintext highlighter-rouge">::&lt;function_name&gt;</code> to the end of my command from above, as shown below:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pytest ./hnn_core/tests/test_network.py::test_network_models
+</code></pre></div></div>
+
+<p>If you run the above, then as part of the <code class="language-plaintext highlighter-rouge">pytest</code> output, you should see <code class="language-plaintext highlighter-rouge">collected 1 item</code> followed by the filename, followed by the test status. This enables you to examine or re-run any specific test without having to re-run the entire test suite!</p>
+
+<hr />
+
+<h1 id="using-pdb-with-pytest">Using <code class="language-plaintext highlighter-rouge">pdb</code> with <code class="language-plaintext highlighter-rouge">pytest</code></h1>
+
+<p>Finally, it’s time to combine our knowledge. Fortunately, <code class="language-plaintext highlighter-rouge">pytest</code> has built-in and convenient <code class="language-plaintext highlighter-rouge">pdb</code> support! All you have to do is add the <code class="language-plaintext highlighter-rouge">--pdb</code> option to your <code class="language-plaintext highlighter-rouge">pytest</code> invocation. <a href="https://docs.pytest.org/en/6.2.x/usage.html#dropping-to-pdb-python-debugger-on-failures">See docs here</a>.</p>
+
+<p>The shortest way to get started to use the following from the command line:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pytest --pdb
+</code></pre></div></div>
+
+<p>However, as before, let’s provide a better, more real example. Let’s say I make a local change to <code class="language-plaintext highlighter-rouge">hnn_core/tests/test_network.py::test_network_models</code> (<a href="https://github.com/jonescompneurolab/hnn-core/blob/master/hnn_core/tests/test_network.py#L97">see here</a>), where I change line 97 from this:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">net_law</span> <span class="o">=</span> <span class="n">law_2021_model</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>to this:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">net_law</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>When I next run my function-specific test, this will fail:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pytest ./hnn_core/tests/test_network.py::test_network_models
+</code></pre></div></div>
+
+<p>What are we to do? Simply add <code class="language-plaintext highlighter-rouge">--pdb</code> to the end of our command!</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pytest ./hnn_core/tests/test_network.py::test_network_models --pdb
+</code></pre></div></div>
+
+<p>When (and WHERE) the test fails, instead of just reporting a failed test, <code class="language-plaintext highlighter-rouge">pytest</code> will “drop” us down into a <code class="language-plaintext highlighter-rouge">pdb</code> debug console like before, but <em>exactly where the test fails</em>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(hc13) {15:08}~/rep/brn/hnn-core:master ✗ ➭ pytest ./hnn_core/tests/test_network.py::test_network_models --pdb
+================================================================================================ test session starts =================================================================================================
+platform darwin -- Python 3.13.2, pytest-8.4.0, pluggy-1.6.0
+rootdir: /Users/austinsoplata/rep/brn/hnn-core
+configfile: pytest.ini
+plugins: xdist-3.7.0, anyio-4.9.0, cov-6.2.1
+collected 1 item
+
+hnn_core/tests/test_network.py F
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; traceback &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+
+    def test_network_models():
+        """ "Test instantiations of the network object"""
+        # Make sure critical biophysics for Law model are updated
+        net_law = list()
+        # instantiate drive events for NetworkBuilder
+&gt;       net_law._instantiate_drives(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            tstop=net_law._params["tstop"], n_trials=net_law._params["N_trials"]
+        )
+E       AttributeError: 'list' object has no attribute '_instantiate_drives'
+
+hnn_core/tests/test_network.py:99: AttributeError
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; entering PDB &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; PDB post_mortem (IO-capturing turned off) &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+&gt; /Users/austinsoplata/rep/brn/hnn-core/hnn_core/tests/test_network.py(99)test_network_models()
+-&gt; net_law._instantiate_drives(
+(Pdb)
+</code></pre></div></div>
+
+<p>This is awesome! We can now examine what the state of all the variables are when the tests fail. However, if we try to use <code class="language-plaintext highlighter-rouge">c</code> to <code class="language-plaintext highlighter-rouge">continue</code> the program in our <code class="language-plaintext highlighter-rouge">pdb</code> session, we’ll just get the same output as before.</p>
+
+<p>Another way that <code class="language-plaintext highlighter-rouge">pytest</code> supports <code class="language-plaintext highlighter-rouge">pdb</code> is with <code class="language-plaintext highlighter-rouge">breakpoint()</code> insertion like normal Python code. Let’s go inside our <code class="language-plaintext highlighter-rouge">test_network.py</code> file, and reverse the line 97 change. Then, let’s add a <code class="language-plaintext highlighter-rouge">breakpoint()</code> after it, such that our lines 97 and 98 look like:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">97</span>    <span class="n">net_law</span> <span class="o">=</span> <span class="n">law_2021_model</span><span class="p">()</span>
+<span class="mi">98</span>    <span class="n">breakpoint</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Now, let’s try to get to our breakpoint using the <code class="language-plaintext highlighter-rouge">pytest</code> invocation from above:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pytest ./hnn_core/tests/test_network.py::test_network_models --pdb
+</code></pre></div></div>
+
+<p>We get a <code class="language-plaintext highlighter-rouge">pdb</code> debug console, same as before:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(hc13) {15:26}~/rep/brn/hnn-core:master ✗ ➭ pytest ./hnn_core/tests/test_network.py::test_network_models
+================================================================================================ test session starts =================================================================================================
+platform darwin -- Python 3.13.2, pytest-8.4.0, pluggy-1.6.0
+rootdir: /Users/austinsoplata/rep/brn/hnn-core
+configfile: pytest.ini
+plugins: xdist-3.7.0, anyio-4.9.0, cov-6.2.1
+collected 1 item
+
+hnn_core/tests/test_network.py
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; PDB set_trace (IO-capturing turned off) &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+&gt; /Users/austinsoplata/rep/brn/hnn-core/hnn_core/tests/test_network.py(98)test_network_models()
+-&gt; breakpoint()
+(Pdb) l
+ 93
+ 94     def test_network_models():
+ 95         """ "Test instantiations of the network object"""
+ 96         # Make sure critical biophysics for Law model are updated
+ 97         net_law = law_2021_model()
+ 98  -&gt;     breakpoint()
+ 99         # instantiate drive events for NetworkBuilder
+100         net_law._instantiate_drives(
+101             tstop=net_law._params["tstop"], n_trials=net_law._params["N_trials"]
+102         )
+103
+(Pdb)
+</code></pre></div></div>
+
+<p>Thus, we can use <code class="language-plaintext highlighter-rouge">breakpoint()</code> to investigate our test code just like we can use it for normal code. Note that the <code class="language-plaintext highlighter-rouge">--pdb</code> option isn’t strictly necessary in this instance (we’ve explicitly provided a <code class="language-plaintext highlighter-rouge">breakpoint()</code>), but anytime you are debugging tests, it is good to have it.</p>
+
+<p>If you want to get to a <code class="language-plaintext highlighter-rouge">pdb</code> debug console at the beginning of the test, rather than waiting until things break, you can pass <code class="language-plaintext highlighter-rouge">--trace</code> to <code class="language-plaintext highlighter-rouge">pytest</code> instead of <code class="language-plaintext highlighter-rouge">--pdb</code>: <a href="https://docs.pytest.org/en/6.2.x/usage.html#dropping-to-pdb-python-debugger-at-the-start-of-a-test">see here in the <code class="language-plaintext highlighter-rouge">pytest</code> docs</a>.</p>
+
+<p>In my personal experience, debugging stand-alone scripts or code using IDE debuggers tends to be pretty straightforward, but debugging <code class="language-plaintext highlighter-rouge">pytest</code> calls from an IDE tend to be <em>much</em> harder to configure and get working. If you are trying to debug <code class="language-plaintext highlighter-rouge">pytest</code> tests specifically, you may find it easier to use these above <code class="language-plaintext highlighter-rouge">pdb</code>-based methods instead of your IDE. They’ll also work everywhere.</p>
+
+<p>Note: whenever you are debugging your tests, it is recommended to <em>not</em> run independent tests in parallel, such as what we do by default using <code class="language-plaintext highlighter-rouge">-n auto</code> in our default <code class="language-plaintext highlighter-rouge">pytest</code> calls here <a href="https://github.com/jonescompneurolab/hnn-core/blob/master/Makefile#L60">https://github.com/jonescompneurolab/hnn-core/blob/master/Makefile#L60</a> (<code class="language-plaintext highlighter-rouge">-n auto</code> is provided by <code class="language-plaintext highlighter-rouge">pytest-xdist</code>, not regular <code class="language-plaintext highlighter-rouge">pytest</code>). If you insert a <code class="language-plaintext highlighter-rouge">breakpoint()</code> or try to invoke a <code class="language-plaintext highlighter-rouge">pdb</code> debug console session for tests that are running fully parallel, you may get multiple cores entering a debug console session simultaneously, and the input/output may be garbled. Instead, it is recommended to 1. only run the most specific tests you can at a time (such as a single function or file), and 2. run them without the <code class="language-plaintext highlighter-rouge">-n auto</code> arguments, so that all tests are run serially.</p>]]></content><author><name>Austin E. Soplata, PhD</name><email>me@asoplata.com</email></author><category term="python" /><category term="testing" /><category term="debugging" /><summary type="html"><![CDATA[Table of Contents:]]></summary></entry></feed>
